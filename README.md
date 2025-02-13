@@ -37,7 +37,7 @@ By far, one of my favourite subjects. We learned to implement more complex data 
 ## 3️⃣Computer Architecture / Arquitectura de Computadores
 A subject oriented to learn the usage of several optimizations to help improve the code developed. The final project was an image processor that allows several operations over the PPM format. All the code was developed in **C++** and we were imposed some coding standards and rules in order to improve our skills.
 
-## 3️⃣Heurístics and Optimization / Heurística y Optimización
+## 3️⃣Heuristics and Optimization / Heurística y Optimización
 This subject's projects were oriented to optimization and solving of mathematically complex problems. We used several tools like the **calc-solver and mathprog** for the first practise. For the second one, we had to implement a program that solved an heuristic search problem. In order to achieve a better performance, we chose to use **C++** rather than Python or other higher level languages.
 
 ## 3️⃣User Interfaces / Interfaces de Usuario
