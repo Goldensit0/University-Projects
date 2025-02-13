@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/responsive.css">
+    <link rel="stylesheet" type="text/css" href="style/iniciar_sesion.css">
+    <link rel="stylesheet" type="text/css" href="style/registro.css">
+    <link rel="stylesheet" type="text/css" href="style/editar_perfil.css">
+    <link rel="stylesheet" type="text/css" href="style/cerrar_sesion.css">
+    <link rel="stylesheet" type="text/css" href="style/videollamada.css">
+    <link rel="stylesheet" type="text/css" href="style/mis_cartas.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script/responsive.js" async></script>
+    <script src="script/counter.js" async></script>
+    <script src="script/map.js" async></script>
+    <script src="script/iniciar_sesion.js" async></script>
+    <script src="script/registro.js" async></script>
+    <script src="script/editar_perfil.js" async></script>
+    <script src="script/cerrar_sesion.js" async></script>
+    <script src="script/videollamada.js" async></script>
+    <script src="script/compraExperiencias.js" async></script>
+    <script src="script/actualizar_main.js" async></script>
+    <script src="script/juegos.js" async></script>
+    <script src="script/calendarioDeAdviento.js" async></script>
+    <script src="script/historialCompras.js" async></script>
+    <script src="script/mandar_cartas.js" async></script>
+    <script src="script/mis_cartas.js" async></script>
+    <meta charset="UTF-8">
+    <title>Santa's Trip</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+</head>
+<body>
+    <nav>
+        <ul class="navegacion">
+            <!-- Definimos la barra de navegación con el logo y la opción de usuario -->
+            <li><a href="#" id="logoNav"><img class="logoNavegacion" src="images/logo.png" alt="Inicio"></a></li>
+            <li><a href="#conoce">Conoce a Santa</a></li>
+            <li><a href="#mapa">Mapa interactivo</a></li>
+            <li><a href="#cartas">Las cartas</a></li>
+            <li><a href="#buzon">Buzón de cartas</a></li>
+            <li><a href="#calendario">Calendario de adviento</a></li>
+            <li><a href="#juega">¡Juega!</a></li>
+            <li><a href="#experiencias">Compra experiencias</a></li>
+            <li><button id="cesta"><span class="ribbon">0</span></button></li>
+            <!--
+            <li><a onclick="mostrarRegistro_Inicio()" class="botonFoto">
+                    <img class="user" src="images/user.png" alt="Usuario">
+                </a>
+            </li>
+            <div class="desplegable_usuario">
+                <li id="user"><button class="user"> </button></li>
+                <div class="contenido_desplegable_usuario" style="display:none;">
+                    <li><button class="registro_inicioSesion" id="registrarse">Regístrate</button></li>
+                    <li><button class="registro_inicioSesion" id="iniciarSesion">Inicia sesión</button></li>
+                </div>
+            </div>
+            -->
+
+            <!--El fondo de este botón cambia dependiendo de si estamos logeados o no-->
+            <li><button id="icono_usuario" class = "icono_invitado"></button></li>
+
+            <div id="desplegable_usuario" style="display:none">
+                <!--TODOS LOS BOTONES EN UN MISMO MENU, DEPENDIENDO DE LA SESION SE MUESTRAN UNOS U OTROS-->
+
+                <!--###### INVITADO ######-->
+
+                <!--REGISTRO-->
+                <button class="registro_inicioSesion" id="registrarse">Regístrate</button>
+                    <div id="popup_registro" class="popup_registro" style="display:none">
+                        <div class = "popup_registro_contenido">
+                            <h1>Registro</h1>
+
+                                <form id="formulario_registro">
+                                    <label for="nombre_usuario_new">Usuario:</label>
+                                    <input type="text" id="nombre_usuario_new" required>
+                                    
+                                    <label for="password_new">Contraseña:</label>
+                                    <input type="password" id="password_new" required>
+
+                                    <label for="password_repe">Repetir contraseña:</label>
+                                    <input type="password" id="password_repe" required>
+                                    
+                                    <label for="correo_new">Correo:</label>
+                                    <input type="text" id="correo_new" required pattern = ^[^@]+@[^@]+\.[a-zA-Z]{2,}$ title="El correo debe ser formato usuario@dominio.com">
+                                    <!--Validación del formato del correo directamente implementada-->
+                                
+                                    <label for="ciudad_new">Ciudad:</label>
+                                    <input type="text" id="ciudad_new" required>
+                                    
+                                    <label for="genero_new">Género:</label>
+                                    <select id="genero_new">
+                                        <option>Masculino</option>
+                                        <option>Femenino</option>
+                                        <option>Otro</option>
+                                        <option>Prefiero no decirlo</option>
+                                    </select>
+                                    
+                                    <div id="tres_botoncitos">
+                                        <button id="crear_usuario" type="submit">Aceptar</button>
+                                        <button id="cancelar_registro" type="button">Cancelar</button>
+                                        <button id="limpiar_formulario" type="button">Limpiar</button>
+                                    </div>
+                                </form>
+
+                        </div>
+                    </div>
+
+
+                <!--INICIAR SESIÓN-->
+                <button class="registro_inicioSesion" id="_iniciar_sesion">Inicia sesión</button>
+                    <div id="popup_inicio" class="popup_inicio" style="display:none">
+                        <div class = "popup_inicio_contenido">
+                            
+                            <h1>Iniciar Sesión</h1>
+                            <form id="formulario_inicio_sesion">
+                                <label for="nombre_usuario">Usuario:</label>
+                                <input type="text" id="nombre_usuario" required>
+                                
+                                <label for="password">Contraseña:</label>
+                                <input type="password" id="password" required>
+                    
+                                <div id="dos_botoncitos">
+                                    <button id="iniciar_sesion" type="submit">Acceder</button>
+                                    <button id="cancelar_inicio" type="button">Cancelar</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                
+
+                <!--###### USUARIO REGISTRADO ######-->
+
+                <!--EDITAR PERFIL-->
+                <button id = editar_perfil style="display:none">Mi perfil</button>
+                <div id="popup_mi_perfil" class = "popup_mi_perfil" style="display:none">
+                    <div class="popup_mi_perfil_contenido">
+                        <h1>Editar mi perfil</h1>
+                        <!-- DE MOMENTO, IGNORAMOS LOS HIJOS -->
+                        <p>Datos del usuario</p>
+                        <p>---------------------------------</p>
+                        <p id = "datos_usuario"></p>
+
+                        <button id="editar_usuario" type="button">Editar usuario</button>
+                        <button id="editar_correo" type="button">Editar correo</button>
+                        <button id="editar_ciudad" type="button">Editar ciudad</button>
+                        <button id="cancelar_edicion" type="button">Cancelar</button>
+
+                    </div>
+                </div>
+
+                <!--HISTORIAL DE COMPRA-->
+                <button id ="historial_compra" style="display:none">Historial de compra</button>
+
+                <!--VIDEOLLAMADA-->
+                <button id = videollamada style="display:none">Videollamada</button>
+                    <div id="popup_videollamada" class="popup_videollamada" style="display:none"> <!-- empieza oculto-->
+                        <div class="popup_videollamada_contenido">
+                            <p>Videollamada con Papá Noél</p>
+                            <div class = "contenedor_video_carga">
+                                <div class="pantalla_carga"></div>
+                                <div class="container_video">
+                                    <!--<video id="video" autoplay muted></video>-->
+                                    <iframe id="video" width=1400vh height=700vh frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+                                </div>
+                            </div>
+                            <button id="llamar" type="button">Llamar</button>
+                            <button id="colgar" type="button">Colgar</button>
+                            <button id="salir" type="button">Salir</button>
+                        </div>
+                    </div>
+
+                <!--MIS CARTAS-->
+                <button id = mis_cartas style="display:none">Mis cartas</button>
+                    <div class="popup_mis_cartas" style="display:none">
+                        <div class="contenedor-miscartas" id="contenedor-mis-cartas">
+                            <!--<div class="contenedor-miscartas-caja" id="mi_carta">
+                                <div class="contenedor-miscartas-caja-imagen">
+                                    <img src="images/felisa.jpeg" alt="Foto de Felisa">
+                                </div>
+                                <div class="contenedor-miscartas-caja-texto">
+                                    <h3></h3>
+                                    <p></p>
+                                </div>
+                            </div>-->
+                        </div>
+                        <button class="salir_cartas" type="button">Salir</button>
+                    </div>
+
+                <!--CERRAR SESIÓN-->
+                <button class="registro_inicioSesion" id="cerrar_sesion" style="display:none">Cerrar Sesión</button>
+                    <div id="popup_cerrar_sesion" class="popup_cerrar_sesion" style="display:none"> <!-- empieza oculto-->
+                        <div class="popup_cerrar_sesion_contenido">
+                            <p>¿Seguro que quieres cerrar sesión?</p>
+                            <button id="confirmar_cerrar_sesion" type="submit">Cerrar Sesión</button>
+                            <button id="cancelar_cerrar_sesion" type="button">Cancelar</button>
+                        </div>
+                    </div>
+
+
+            </div>
+        </ul>
+    </nav>
+
+
+    <!-- AQUI VA EL POP-UP PARA LA CESTA-->
+    <div class="pop-modal-cesta" id="cesta-pop-up">
+        <div class="contenedor-contenido-modal-cesta">
+            <h2>TU CESTA</h2>
+            <hr id="arriba-cesta">
+            <div class="contenedor-productos">
+                <div class="caja-prodcutos" id="producto-peluche-papa">
+                    <span class="no-producto">&times;</span>
+                    <h4 class="titulo-producto">Peluche Papá Noel</h4>
+                    <img class="img-producto" src="images/peluchePapanoel.png" alt="Peluche de Papá Noel">
+                    <p class="precio-producto" id="precio-peluche-papa"><strong>$15</strong></p>
+                    <p class="cant-producto">Cantidad: </p>
+                    <span class="quantity-producto" id="plus-peluche-papa">0</span>
+                    <button class="sumar-producto">+</button>
+                </div>
+                <div class="caja-prodcutos" id="producto-calendario">
+                    <span class="no-producto">&times;</span>
+                    <h4 class="titulo-producto">Calendario de Adviento</h4>
+                    <img class="img-producto" src="images/adventCalendar.jpg" alt="Calendario de adviento">
+                    <p class="precio-producto" id="precio-calendario"><strong>$30</strong></p>
+                    <p class="cant-producto">Cantidad: </p>
+                    <span class="quantity-producto" id="plus-calendario">0</span>
+                    <button class="sumar-producto">+</button>
+                </div>
+                <div class="caja-prodcutos" id="producto-peluche-rodolfo">
+                    <span class="no-producto">&times;</span>
+                    <h4 class="titulo-producto">Peluche Rodolfo el Reno</h4>
+                    <img class="img-producto" src="images/pelucheReno.png" alt="Peluche de Rodolfo el Reno">
+                    <p class="precio-producto" id="precio-peluche-rodolfo"><strong>$25</strong></p>
+                    <p class="cant-producto">Cantidad: </p>
+                    <span class="quantity-producto" id="plus-peluche-rodolfo">0</span>
+                    <button class="sumar-producto">+</button>
+                </div>
+                    <div class="caja-prodcutos" id="producto-libro">
+                    <span class="no-producto">&times;</span>
+                    <h4 class="titulo-producto">Libro de colorear</h4>
+                    <img class="img-producto" src="images/coloringBook.jpg" alt="Libro para colorear">
+                    <p class="precio-producto" id="precio-libro"><strong>$10</strong></p>
+                    <p class="cant-producto">Cantidad: </p>
+                    <span class="quantity-producto" id="plus-libro">0</span>
+                    <button class="sumar-producto">+</button>
+                </div>
+                <div class="caja-prodcutos" id="producto-viaje">
+                    <span class="no-producto">&times;</span>
+                    <h4 class="titulo-producto">Viaje a Laponia</h4>
+                    <img class="img-producto" src="images/experienciaLaponia.jpg" alt="Foto de Laponia">
+                    <p class="precio-producto" id="precio-viaje"><strong>$750</strong></p>
+                    <p class="cant-producto">Cantidad: </p>
+                    <span class="quantity-producto" id="plus-viaje">0</span>
+                    <button class="sumar-producto">+</button>
+                </div>
+                <div class="caja-prodcutos" id="producto-elfo">
+                    <span class="no-producto">&times;</span>
+                    <h4 class="titulo-producto">Experiencia Inmersiva </h4>
+                    <img class="img-producto" src="images/experienciaElfo.jpg" alt="Foto de Elfos">
+                    <p class="precio-producto" id="precio-elfo"><strong>$50</strong></p>
+                    <p class="cant-producto">Cantidad: </p>
+                    <span class="quantity-producto" id="plus-elfo">0</span>
+                    <button class="sumar-producto">+</button>
+                </div>
+            </div>
+            <hr id="abajo-cesta">
+            <div class="dinero-total"><h3 id="total-t">Total: </h3><span id="span-total">0</span></div>
+            <button id="pagar-boton">Finalizar y pagar</button>
+        </div>
+    </div>
+
+
+    <div class="pop-modal-pago" id="pago-pop-up">
+        <span id="cerrar-pago">&times;</span>
+        <div class="contenedor-contenido-modal-pago">
+            <h3>REALICE SU PAGO</h3>
+            <form class="cotenedor-formulario-pago" id="pago-form">
+
+                <label for="nombre-pago">Nombre y Apellidos:</label>
+                <input type="text" class="inputs-form-pago" id="nombre-pago" placeholder="Introduce tu nombre completo" required>
+                <label for="email-pago">Email:</label>
+                <input type="email" class="inputs-form-pago" id="email-pago" placeholder="Introduce tu email" required>
+
+                <label for="pais-pago">País:</label>
+                <input type="text" class="inputs-form-pago" id="pais-pago" placeholder="Introduce tu país" required>
+                <label for="ciudad-pago">Ciudad:</label>
+                <input type="text" class="inputs-form-pago" id="ciudad-pago" placeholder="Introduce tu ciudad" required>
+
+                <label for="dirc-pago">Dirección:</label>
+                <input type="text" class="inputs-form-pago" id="dirc-pago" placeholder="Introduce tu calle, código postal..." required>
+
+                <label for="metodo-pago">Método de pago:</label>
+                <select id="metodo-pago" name="Método de pago" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="bizum">Bizum</option>
+                    <option value="transferencia">Transferencia</option>
+                </select>
+
+                <button id="pago-boton" type="submit">Pagar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="pop-modal-historial" id="historial-pop-modal" style="display:none">
+        <div class="contenedor-contenido-modal-hist">
+            <span id="cerrar-historial">&times;</span>
+            <h3>Historial de compras</h3>
+            <div class="caja-pedidos-historial" id="caja-pedidos">
+                <div class="pedido-historial">
+                    <p class="fecha-pedido">Fecha del pedido:</p>
+                    <div class="caja-productos-historial">
+                        <h4 class="titulo-producto-hist">Peluche Papá Noel</h4>
+                        <img class="img-producto-hist" src="images/peluchePapanoel.png" alt="Peluche de Papá Noel">
+                        <p class="texto-producto-hist">Cantidad:</p>
+                        <p class="cant-producto-hist">0</p>
+                    </div>
+                    <div class="caja-productos-historial">
+                        <h4 class="titulo-producto-hist">Calendario de Adviento</h4>
+                        <img class="img-producto-hist" src="images/adventCalendar.jpg" alt="Calendario de adviento">
+                        <p class="texto-producto-hist">Cantidad:</p>
+                        <p class="cant-producto-hist" id="hist-calendario">0</p>
+                    </div>
+                    <div class="caja-productos-historial" id="pedido-peluche-rodolfo">
+                        <h4 class="titulo-producto-hist">Peluche Rodolfo el Reno</h4>
+                        <img class="img-producto-hist" src="images/pelucheReno.png" alt="Peluche de Rodolfo el Reno">
+                        <p class="texto-producto-hist">Cantidad:</p>
+                        <p class="cant-producto-hist" id="hist-peluche-rodolfo">0</p>
+                    </div>
+                    <div class="caja-productos-historial" id="pedido-libro">
+                        <h4 class="titulo-producto-hist">Libro de colorear</h4>
+                        <img class="img-producto-hist" src="images/coloringBook.jpg" alt="Libro para colorear">
+                        <p class="texto-producto-hist">Cantidad:</p>
+                        <p class="cant-producto-hist" id="hist-libro">0</p>
+                    </div>
+                    <div class="caja-productos-historial" id="pedido-viaje">
+                        <h4 class="titulo-producto-hist">Viaje a Laponia</h4>
+                        <img class="img-producto-hist" src="images/experienciaLaponia.jpg" alt="Foto de Laponia">
+                        <p class="texto-producto-hist">Cantidad:</p>
+                        <p class="cant-producto-hist" id="hist-viaje">0</p>
+                    </div>
+                    <div class="caja-productos-historial" id="pedido-elfo">
+                        <h4 class="titulo-producto-hist">Experiencia Inmersiva </h4>
+                        <img class="img-producto-hist" src="images/experienciaElfo.jpg" alt="Foto de Elfos">
+                        <p class="texto-producto-hist">Cantidad:</p>
+                        <p class="cant-producto-hist" id="hist-elfo">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Página 1, contador --------------------------------------------------------------------------------->
+    <section class="pagina" id="inicio">
+        <div class="titulo">
+            <h1>¡CUENTA ATRÁS PARA EL DESPEGUE!</h1>
+        </div>
+        <div class="contenedor-contador">
+            <div class="contador">
+                <!--Ponemos la cuenta atras, cada div es un módulo (dias, horas, minutos y segundos)-->
+                <div class="modulo-contador" id="dias">
+                    <h2 class="dias">00</h2>
+                    <p>Días</p>
+                </div>
+                <div class="modulo-contador" id="horas">
+                    <h2 class="horas">00</h2>
+                    <p>Horas</p>
+                </div>
+                <div class="modulo-contador" id="minutos">
+                    <h2 class="minutos">00</h2>
+                    <p>Minutos</p>
+                </div>
+                <div class="modulo-contador" id="segundos">
+                    <h2 class="segundos">00</h2>
+                    <p>Segundos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--Página 2, conoce a Papá Noel -------------------------------------------------------------------->
+    <section class="pagina" id="conoce">
+
+        <div class="contenedor-conoce">
+            <div class="contenedor-conoce-texto">
+                <div class="titulo">
+                    <h1>Conociendo a Santa Claus...</h1>
+                </div>
+                <h2 class="texto-conoce">¿Quién es Papá Noel?</h2>
+                <p class="texto-conoce">Papá Noel, o Santa Claus para los que saben hablar inglés es un señor que se encarga de dar regalos a los niños que se han portado bien a lo largo del año. Si son buenos, Papá Noel acudirá durante la noche del 24 de diciembre a sus casas, y entrando por su chimenea, dejará los regalos que más quieran debajo de su árbol de Navidad.</p>
+                <p class="texto-conoce">Papá Noel reside en Laponia, Finlandia; y durante el año se prepara junto con sus renos mágicos y con la ayuda de sus elfos para poder hacer de esa noche una noche mágica. Te sonará Rodolfo el reno, ¿no? Pues él es el reno favorito de Papá Noel, porque es el que tira más fuerte de su trineo. A lo mejor su nariz roja tiene algo que ver...</p>
+            </div>
+            <div class="contenedor-conoce-foto">
+                <!--<img src="images/santacute.png" alt="Dibujo adorable de Papá Noel">-->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--Página 3, mapa interactivo ---------------------------------------------------------------------->
+    <section class="pagina" id="mapa">
+        <div class="titulo">
+            <h1>¿Por dónde anda Papá Noel?</h1>
+        </div>
+        <div class="contenedor-mapa">
+            <!-- Implementamos el mapa -->
+            <div class="fondo-guachi-mapa">
+                <div id="objeto-mapa"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--Página 4, las cartas ----------------------------------------------------------------------------->
+    <section class="pagina" id="cartas">
+        <div class="titulo">
+            <h1>Las cartas</h1>
+        </div>
+        <div class="contenedor-cartas">
+            <div class="contenedor-cartas-caja" id="carta1">
+                <div class="contenedor-cartas-caja-imagen">
+                    <img src="images/felisa.jpeg" alt="Foto de Felisa">
+                </div>
+                <div class="contenedor-cartas-caja-texto">
+                    <h3>Felisa</h3>
+                    <p>Yo quiero mucha comida porque me encanta comer, soy un pingüino glotón.</p>
+                </div>
+
+            </div>
+
+            <div class="contenedor-cartas-caja" id="carta2">
+                <div class="contenedor-cartas-caja-imagen">
+                    <img src="images/triana.jpeg" alt="Foto de Triana">
+                </div>
+                <div class="contenedor-cartas-caja-texto">
+                    <h3>Triana</h3>
+                    <p>Querido Papá Noel, dame mucha paciencia porque Valentina se está portando fatal. Solo pido eso.</p>
+                </div>
+
+            </div>
+
+            <div class="contenedor-cartas-caja" id="carta3">
+                <div class="contenedor-cartas-caja-imagen">
+                    <img src="images/carlos.jpg" alt="Foto de Carlos">
+                </div>
+                <div class="contenedor-cartas-caja-texto">
+                    <h3>Carlos</h3>
+                    <p>Hola Papá Noel, ¿qué tal? No estoy muy seguro de cómo funciona esto porque soy un hipopótamo, pero si me puedes traer una manguera para mojarme...</p>
+                </div>
+
+            </div>
+
+            <div class="contenedor-cartas-caja" id="carta4">
+                <div class="contenedor-cartas-caja-imagen">
+                    <img src="images/gerardo.jpeg" alt="Foto de Gerardo">
+                </div>
+                <div class="contenedor-cartas-caja-texto">
+                    <h3>Gerardo</h3>
+                    <p>Santa, este año me he portado muy bien y quiero pedirte un tractor de juguete. ¡Gracias!</p>
+                </div>
+
+            </div>
+
+            <div class="contenedor-cartas-caja" id="carta5">
+                <div class="contenedor-cartas-caja-imagen">
+                    <img src="images/paloma.png" alt="Foto de Paloma">
+                </div>
+                <div class="contenedor-cartas-caja-texto">
+                    <h3>Paloma</h3>
+                    <p>Yo, como soy divina, quiero un set de maquillaje de Frozen. Me gusta Elsa y soy tan icónica como ella.</p>
+                </div>
+
+            </div>
+
+            <div class="contenedor-cartas-caja" id="carta6">
+                <div class="contenedor-cartas-caja-imagen">
+                    <img src="images/valentina.png" alt="Foto de Valentina">
+                </div>
+                <div class="contenedor-cartas-caja-texto">
+                    <h3>Valentina</h3>
+                    <p>Querido Papá Noel, yo creo que me estoy portando súper, así que quiero un favor: que mi padre no pague más a Triana, me cae mal. También quiero un pony.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--Página 4, buzón de cartas ----------------------------------------------------------------------------->
+    <section class="pagina" id="buzon">
+        <div class="titulo">
+            <h1>Buzón de cartas</h1>
+        </div>
+        <div class="contenedor-buzon">
+            <div class="formulario-buzon">
+                <form id="formulario-buzon" novalidate>
+                    <span id="noLogin" class="error" aria-live="polite"></span>
+                    <label for="nombre">Nombre</label>
+                    <br>
+                    <input class="input-formulario-buzon" type="text" name="nombre" id="nombre" required>
+                    <span class="error" aria-live="polite"></span>
+                    <br>
+                    <label for="apellidos">Apellidos</label>
+                    <br>
+                    <input class="input-formulario-buzon" type="text" name="apellidos" id="apellidos" required>
+                    <span class="error" aria-live="polite"></span>
+                    <br>
+                    <label for="mail">Correo electrónico</label>
+                    <br>
+                    <input class="input-formulario-buzon" type="email" name="mail" id="mail" required>
+                    <span class="error" aria-live="polite"></span>
+                    <br>
+                    <label for="carta">Tu carta</label>
+                    <br>
+                    <input class="input-formulario-buzon" type="text" name="carta" id="carta" required>
+                    <span class="error" aria-live="polite"></span>
+                    <br>
+                    <button type="submit" class="boton-formulario-buzon">¡Envía tu carta!</button>
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--Página 5, calendario de adviento --------------------------------------------------------------->
+    <section class="pagina" id="calendario">
+        <div class="titulo">
+            <h1>Calendario de adviento</h1>
+        </div>
+        <!--br>
+        <p>¡Ven cada día a reclamar tus recompensas!</p-->
+        <div class="calendario-contenido">
+            <div class="alerta" id="alerta-no-range">
+                <span class="cerrar-pop" id="cerrar-alerta">&times;</span>
+                <p><b>Oh ho ho ho</b>. Un poco de paciencia señorito. Att: Papá Noel</p>
+            </div>
+            <div class="contenedor-calendario">
+                <div class="calendario">
+                    <!-- Aquí implementamos el calendario de adviento: -->
+                    <div class="contenedor-cajas-calendario" id="dia1">
+                        <button class="boton-calendario">1</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia2">
+                        <button class="boton-calendario">2</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia3">
+                        <button class="boton-calendario">3</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia4">
+                        <button class="boton-calendario">4</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia5">
+                        <button class="boton-calendario">5</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia6">
+                        <button class="boton-calendario">6</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia7">
+                        <button class="boton-calendario">7</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia8">
+                        <button class="boton-calendario">8</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia9">
+                        <button class="boton-calendario">9</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia10">
+                        <button class="boton-calendario">10</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia11">
+                        <button class="boton-calendario">11</button>
+                    </div>
+                    <div class="contenedor-cajas-calendario" id="dia12">
+                        <button class="boton-calendario">12</button>
+                    </div>
+                    <div class="contenedor-cajas-calendario" id="dia13">
+                        <button class="boton-calendario">13</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia14">
+                        <button class="boton-calendario">14</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia15">
+                        <button class="boton-calendario">15</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia16">
+                        <button class="boton-calendario">16</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia17">
+                        <button class="boton-calendario">17</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia18">
+                        <button class="boton-calendario">18</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia19">
+                        <button class="boton-calendario">19</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia20">
+                        <button class="boton-calendario">20</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia21">
+                        <button class="boton-calendario">21</button>
+                    </div>
+
+                    <div class="contenedor-cajas-calendario" id="dia22">
+                        <button class="boton-calendario">22</button>
+                    </div>
+                    <div class="contenedor-cajas-calendario" id="dia23">
+                        <button class="boton-calendario">23</button>
+                    </div>
+                    <div class="contenedor-cajas-calendario" id="dia24">
+                        <button class="boton-calendario">24</button>
+                    </div>
+                    <div class="contenedor-cajas-calendario" id="dia25">
+                        <button class="boton-calendario">25</button>
+                    </div>
+                </div>
+
+                <div class="foto-calendario">
+                    <!--<img src="images/peluche.png" alt="Foto de un Peluche">-->
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!--POP UP que sale al pulsar un día del calendario-->
+    <div class="pop-modal" id="pop-dia1">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="video-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/uArFYpxDOoU?si=SVwxeBlNUMIz16pb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia2">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <h3>Una receta: Árbol de hojaldre</h3>
+                <div class="contenedor-recetas">
+                    <div class="foto-receta" id="arbol-receta"></div>
+                    <div class="info-receta">
+                        <h4 >Ingredientes</h4>
+                        <ul>
+                            <li>Hojaldre láminas......... 2</li>
+                            <li>Nutella............... 200g</li>
+                            <li>Avellanas............. 30 g</li>
+                            <li>Huevo.................... 1</li>
+                        </ul>
+                    </div>
+                    <div class="pasos-receta">
+                        <p>Extendemos una hoja de hojaldre y la pincelamos con la Nutella. Se extenderá mejor si
+                        la atemperamos un poco en el microondas, unos 20 segundos será suficiente. Yo he usado
+                        láminas rectangulares, pero también se puede hacer con las de forma redonda, aunque tendréis más desperdicio a la hora de recortar la forma del árbol. </p>
+
+                        <p>Cubrimos con la segunda lámina de hojaldre. Hay que ir con cuidado porque una vez depositada
+                        sobre la Nutella queda adherida y no hay quien la mueva. Con ayuda de un cuchillo hacemos la
+                        forma del árbol de Navidad, recortamos y retiramos el sobrante. Con un cortapastas en forma de estrella, cortamos una y la usamos para decorar la cima del árbol. </p>
+
+                        <p>A continuación hacemos cortes horizontales en ambos lados, sin llegar al centro. Podemos usar
+                        un cuchillo afilado o corta pizzas. Retorcemos cada rama sobre sí misma, haciendo tirabuzones,
+                        tal y como veis en las fotos del paso a paso. Pincelamos con huevo batido, cubrimos la parte
+                            central con avellanas troceadas y horneamos a 200 °C durante 12-14 minutos. </p>
+
+                        <p>No tiréis el sobrante. Con él podemos hacer formas varias o cortar en tiras, retorcer de
+                            igual manera que hemos hecho con las ramas de nuestro árbol, pincelar con huevo y hornear. </p>
+
+                        <a href="https://www.directoalpaladar.com/postres/arbol-hojaldre-para-navidad-receta-facil-nutella">Página web oficial de la receta para más detalles</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia3">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="dibujo-regalo">
+                    <img src="images/colorear-navidad-amigos.jpg" alt="dibujo para colorear">
+                    <a href="images/colorear-navidad-amigos.jpg" download="regalo_dia3.pdf">¡Descarga el dibujo!</a>                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia4">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="no-regalo-texto">
+                <p><em>- Santa tranquilito en el fondo de la habitación -</em>
+                    <br>
+                    ho ho ho
+                    <br>
+                    <br>
+                    <em>-Un elfo se acerca temeroso a Papa Noél y susurra-</em>
+                    <br>
+                    Señor... No hay un regalo hoy...
+                    <br>
+                    <br>
+                    <em>- Santa sorprendido, abre los ojos y se ajusta las gafas. Susurra de vuelta al elfo-</em>
+                    <br>
+                    ¿Cómo ha podido pasar esto?
+                    <br>
+                    <br>
+                    <em>- Al ver la reacción de horror del duende, Santa decide pasarlo por alto. La navidad está cerca, los preparativos están siendo muy laboriosos. Santa encuentra una solución -</em>
+                    <br>
+                    ¡Oh! No te había vitos. Lo siento mucho pero hoy no tengo regalo pa ti
+                    <br>
+                    ¡Vuelve mañana!
+                </p>
+                    <hr>
+                    Perdón por las molestias :)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia5">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="video-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GwvBmFdFvgs?si=uaq_N-TFvihDghUx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia6">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="no-regalo-texto">
+                    <p><em>- Santa está acariciando a un reno en la granja y un elfo, Sonrisitas, se acerca con las manos en la espada -</em>
+                        <br>
+                        Señor... Mm... No sé como decirle esto
+                        <br>
+                        <br>
+                        <em>- Toma aire y habla lo más rápido que puede -</em>
+                        <br>
+                        Hoy tampoco hay regalo. Al becario se le ha caído el cachufé encima del planning.
+                        <br>
+                        <br>
+                        <em>- Santa, que escuchaba atentamente, se seca el nulo sudor de la frente. Ha tomado una decisión -</em>
+                        <br>
+                        Vaya... Vaya... Hola querido internauta, pido disculpas por este terrible error que ha vuelto a acontecer hoy. Esperemos que esto no se vuelva a repetir y vuelva a disfrutar de esta experiencia.
+                        <br>
+                        <br>
+                        <em>- Sonrisitas y Papá Noel desaparecen de escena, pero se escucha lo último que dice Santa -</em>
+                        <br>
+                        Reunión de equipo navideño en la Chimenea Mayor cuando la luna caiga.
+                    </p>
+                    <hr>
+                    Perdón por las molestias :)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia7">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="dibujo-regalo">
+                    <img src="images/dibujos-para-colorear-navidad-papa-noel.jpg" alt="dibujo para colorear">
+                    <a href="images/dibujos-para-colorear-navidad-papa-noel.jpg" download="regalo_dia7.pdf">¡Descarga el dibujo!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia8">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <!--div class="separador-bonito-receta">R</div-->
+                <h3>Una manualidad: Corona Ho Ho Ho</h3>
+                <div class="contenedor-recetas">
+                    <div class="foto-receta" id="corona-manualidad"></div>
+                    <div class="info-receta">
+                        <h4>Necesitas:</h4>
+                        <ul>
+                            <li>Cartón</li>
+                            <li>Lápiz</li>
+                            <li>Tijeras</li>
+                            <li>Washi tape con motivos rojos</li>
+                            <li>Corona de espuma blanca</li>
+                            <li>Gorro de Papá Noel</li>
+                            <li>Alfileres de cabezas blancas</li>
+                            <li>Pegamento caliente</li>
+                            <li>Chinchetas</li>
+                            <li>Tela de tul rígida o esponjas de malla</li>
+                        </ul>
+                    </div>
+                    <div class="pasos-receta">
+                        <ol>
+                            <li>Dibuja una H y una O en el cartón. Recorta.</li>>
+                            <li>Usa estas plantillas para hacer tres letras iguales de cada tipo.</li>
+                            <li>Forra tus letras con washi tape para decorar.</li>
+                            <li>Pega en la parte trasera de cada letra varias chinchetas para sujetarlas a la corona.</li>
+                            <li>Usa una tira grande de tela de tul o la malla de una o varias esponjas para hacer la barba de Papá Noel. Arrúgala ligeramente para darle volumen.</li>
+                            <li>Colócala sobre la parte inferior de la corona con unos alfileres con cabeza blanca.</li>
+                            <li>Pon el gorro en la parte superior de la corona. Puedes meter los extremos de la barba debajo para que no sobresalgan.</li>
+                            <li>Pincha sobre la tela de tul el tradicional Ho, ho, ho de Santa y tendrás la corona terminada.</li>
+                        </ol>
+                        <a href="https://saposyprincesas.elmundo.es/ocio-en-casa/manualidades-para-ninos/coronas-navidenas-para-hacer-con-ninos">Página web oficial de la manualidad para más detalles</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia9">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <!--div class="separador-bonito-receta">R</div-->
+                <h3>Una receta: Roscón de Reyes</h3>
+                <div class="contenedor-recetas">
+                    <div class="foto-receta" id="roscon-receta"></div>
+                    <div class="info-receta">
+                        <h4>Necesitas:</h4>
+                        <ul>
+                            <li>Harina de fuerza 400 g</li>
+                            <li>Azúcar 100 g</li>
+                            <li>Huevos 2</li>
+                            <li>Ron (licor) 20 ml</li>
+                            <li>Agua 100 ml</li>
+                            <li>Leche 30 ml</li>
+                            <li>Ralladura de naranja 1</li>
+                            <li>Levadura prensada 20 g</li>
+                            <li>Agua de azahar media cucharadita</li>
+                            <li>Sal</li>
+                            <li>Almendras en láminas</li>
+                            <li>Fruta escarchada</li>
+                            <li>Azúcar granulado</li>
+                        </ul>
+                    </div>
+                    <div class="pasos-receta">
+                        <ol>
+                            <li>Pon en un bol 350 g de harina, haz un hueco en el centro y en él añade el azúcar, la levadura disuelta en el agua templada, el ron, la leche, la ralladura de naranja, el agua de azahar y la mantequilla.</li>
+                            <li>Mezclamos ligeramente y añadimos uno de los huevos y la pizca de sal y amasamos.</li>
+                            <li>Pon la masa sobre una superficie enharinada y amasa hasta que la masa quede elástica y no se pegue a la superficie. </li>
+                            <li>Formamos una bola con la masa y le hacemos un agujero en el centro.</li>
+                            <li>Con cuidado, lo vamos estirando y agrandando, dando forma al roscón.</li>
+                            <li>Lo colocamos sobre una bandeja de horno, en un lugar cálido y lo dejamo levar por lo menos una hora.</li>
+                            <li>Precalentamos el horno a 200ºC.</li>
+                            <li>Mientras pintamos el roscón con el otro huevo batido y lo decoramos con la fruta escarchada –imprescindible la naranja confitada–, las almendras fileteadas y el azúcar granulado.</li>
+                            <li>Por último, horneamos el roscón entre 15 y 20 minutos a 200º o hasta que la superficie esté dorada.</li>
+                            <li>Dejaremos enfriar ligeramente antes de degustarlo.</li>
+
+                        </ol>
+                        <a href="https://saposyprincesas.elmundo.es/ocio-en-casa/manualidades-para-ninos/coronas-navidenas-para-hacer-con-ninos">Página web oficial de la receta para más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia10">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="no-regalo-texto">
+                    <h3>Ups, algo ha salido mal</h3>
+                        <br>
+                        <br>
+                    <h4 class="error1210">Error 1210: regalo not found :( </h4>
+                        <br>
+                        <br>
+                        <br>
+                        Porfa, inténtalo de nuevo mañana.
+                        <br>
+                        <br><p>
+                        <em>Sonrisitas: ¿así está bien? <br> Santa: shhhh</em>
+                    </p>
+                    <hr>
+                    Perdón por las molestias :)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia11">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="video-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WuvhOD-mP8M?si=J8cGjmcHys9QG2C8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="no-regalo-texto">
+                    <hr>
+                    <p>Santa: ¡SONRISITAS! Esto no es navideño. <br>
+                        Sonrisitas: Pero... ¡Señor! ¡Es un temazo! YyY HaBla DDe la Na-na-navidad <br>
+                        Santa: ¡Que no se vuelva repetir! <br>
+                        <em>- Silencio y empieza la canción -</em> <br>
+                        .
+                        <br>
+                        ..
+                        <br>
+                        Ambos a la vez: So we could call it even!! <br>
+                        You could call me babe for the weekend!!!<br>
+                        'Tis the damn season, write this down!! <br>
+                    </p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia12">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="dibujo-regalo">
+                    <img src="images/colorear-muneco-andando.jpg" alt="dibujo para colorear">
+                    <a href="images/colorear-muneco-andando.jpg" download="regalo_dia12.pdf">¡Descarga el dibujo!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia13">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="video-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mN3rDTAdM2o?si=PVvbcyUwucX8QijW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="no-regalo-texto">
+                    <hr>
+                    <p> Sonrisitas: Jefe esta es Navideña, no se puede quejar <br>
+                        Santa: MmmH... <br>
+                    </p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia14">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <!--div class="separador-bonito-receta">R</div-->
+                <h3>Una receta: Churros</h3>
+                <div class="contenedor-recetas">
+                    <div class="foto-receta" id="churros-receta"></div>
+                    <div class="info-receta">
+                        <h4>Necesitas:</h4>
+                        <ul>
+                            <li>300 g de harina</li>
+                            <li>440 g de agua</li>
+                            <li>1 cucharadita de sal</li>
+                            <li>Azúcar para espolvorear</li>
+                            <li>Aceite de oliva suave para freír</li>
+                            <li>Papel de cocina (para absorber exceso de aceite)</li>
+                            <li>Manga pastelera con boca fina o churrera (puedes comprarla aquí)</li>
+                        </ul>
+                    </div>
+                    <div class="pasos-receta">
+                        <ol>
+                            <li>Pon en un bol 350 g de harina, haz un hueco en el centro y en él añade el azúcar, la levadura disuelta en el agua templada, el ron, la leche, la ralladura de naranja, el agua de azahar y la mantequilla.</li>
+                            <li>En un bol añade la harina.</li>
+                            <li>En una cazuela calienta el agua con la sal. Cuando comience a hervir, viértelo sobre la harina.</li>
+                            <li>Con una cuchara de madera integra la harina con el agua, hasta llegar a una masa muy pegajosa y bastante compacta.</li>
+                            <li>Deja reposar esta masa cubierta con un paño o film de cocina durante sólo unos minutos.</li>
+                            <li>Introducimos la masa en la churrera o manga pastelera con una boquilla en forma de estrella, este paso es fundamental para que los churros salgan bien, y no haya ningún problema a la hora de freír los churros.</li>
+                        </ol>
+                        <a href="https://saposyprincesas.elmundo.es/ocio-en-casa/manualidades-para-ninos/coronas-navidenas-para-hacer-con-ninos">Página web oficial de la receta para más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia15">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="video-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cbgCFy8YR7E?si=3iE4336V1CxfunUq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia16">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="dibujo-regalo">
+                    <img src="images/dibujos-bolas-navidad-para-colorear.jpg" alt="dibujo para colorear">
+                    <a href="images/dibujos-bolas-navidad-para-colorear.jpg" download="regalo_dia16.pdf">¡Descarga el dibujo!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia17">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="video-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DKVUNatCGm4?si=_CvQfdhw4h2cAPyL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia18">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <!--h2>El regalo es...</h2-->
+                <br>
+                <div class="separador-bonito">R</div>
+                <div class="recordatorio-texto" id="luces-día">
+                        <h3>Recordatorio <br> Las luces de navidad en Madrid <br> estan esperando tu visita</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia19">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="no-regalo-texto">
+                    <p><em>- Papa Noel se rie -</em>
+                        <br>
+                        ho ho ho
+                        <br>
+                        <br>
+                        <em>- Sonrisitas entra por la Chimenea Menor y trata de ganarse la atención de Santa-</em>
+                        <br>
+                        Ejem... Ejem... ¡EJEM!
+                        <br>
+                        <br>
+                        <em>- Santa por fin nota la presencia del elfo -</em>
+                        <br>
+                        No. No me mires así. Otra vez no. Madre mía que año más desastroso. La calificación en TripAdvisor va a abajar...
+                        <br>
+                        <br>
+                        <em>- Sin decir nada, ya saben lo q tiene que hacer. Sonríen -</em>
+                        <br>
+                        No es un regalo pero...
+                        <br>
+                        <button class="danger" id="peligro-maray">!PELIGRO!</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia20">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <!--div class="separador-bonito-receta">R</div-->
+                <h3>Una receta: Galletas de mantequilla</h3>
+                <div class="contenedor-recetas">
+                    <div class="foto-receta" id="galletitas-receta"></div>
+                    <div class="info-receta">
+                        <h4>Necesitas:</h4>
+                        <ul>
+                            <li>2 barras de mantequilla sin sal (200 g)</li>
+                            <li>1 taza de azúcar glass (170 g)</li>
+                            <li>1 huevo</li>
+                            <li>1 cucharadita de extracto de vainilla</li>
+                            <li>1 ½ cucharaditas de extracto de almendra</li>)
+                            <li>2 ½ tazas de harina para todo uso (aprox. 300-320 g)</li>
+                            <li>1 cucharadita de sal</li>
+                        </ul>
+                    </div>
+                    <div class="pasos-receta">
+                        <ol>
+                            <li>Mezclar la mantequilla y el azúcar con una batidora de mano o una batidora de pie.</li>
+                            <li>Añadir el huevo y mezclar bien.</li>
+                            <li>Añadir el extracto o extractos y mezclar.</li>
+                            <li>Mezclar la harina y la sal en una taza y añadir poco a poco a la mezcla húmeda, batir a baja velocidad para combinar.</li>
+                            <li>Cubrir y dejar reposar la masa en el frigorífico 2 horas.</li>
+                            <li>Precalentar el horno a 180ºC.</li>
+                            <li>Amasar brevemente sobre una superficie enharinada y extender la masa con un rodillo dejando un espesor de 6-7 mm aproximadamente</li>
+                            <li>Cortar las galletas con un cortador de galletas y hornear en una bandeja forrada con papel pergamino o de horno durante 14-16 minutos hasta que los bordes estén dorados. Las galletas más pequeñas pueden necesitar menos tiempo y si son más grandes pueden necesitar hasta 18 minutos.</li>
+                        </ol>
+                        <a href="https://www.pequerecetas.com/receta/galletas-navidenas-de-mantequilla/">Página web oficial de la receta para más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pop-modal" id="pop-dia21">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <!--h2>El regalo es...</h2-->
+                <br>
+                <div class="separador-bonito">R</div>
+                <div class="recordatorio-texto" id="calamares-dia">
+                    <h3>Recomendamos <br> ir a la Plaza Mayor <br> a comerse un bocata de calamares</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia22">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="dibujo-regalo">
+                    <img src="images/dibujos-navidad-para-colorear-imprimir.jpg" alt="dibujo para colorear">
+                    <a href="images/dibujos-navidad-para-colorear-imprimir.jpg" download="regalo_dia22.pdf">¡Descarga el dibujo!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia23">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <!--div class="separador-bonito-receta">R</div-->
+                <h3>Una manualidad: Gnomos con lana</h3>
+                <div class="contenedor-recetas">
+                    <div class="foto-receta" id="gnomos-receta"></div>
+                    <div class="info-receta">
+                        <h4>Necesitas:</h4>
+                        <ul>
+                            <li>Fieltro de color carne y naranja</li>
+                            <li>Lana</li>
+                            <li>Hilo de algodón</li>
+                            <li>Aguja</li>
+                            <li>Máquina para pompones</li>
+                            <li>Bolitas de fieltro decorativas</li>
+                            <li>Silicona caliente</li>
+                        </ul>
+                    </div>
+                    <div class="pasos-receta">
+                        <ol>
+                            <li>Empezaremos realizando el pompón de lana. Para ello puedes utilizar la máquina para hacer pompones como ves es muy fácil de realizar de esta manera.</li>
+                            <li>Enrolla primero un lado de la máquina y posteriormente el otro. Cuando lo tengas, cierra y corta con las tijeras las dos mitades. Con un trozo de lana, pásalo por la mitad para cerrar bien el pompón y deja un trozo de lana bien largo.</li>
+                            <li>En un cuadrado de fieltro naranja de unos 10×10 cm corta uno de los lados para darle forma de cono.</li>
+                            <li>Para que quede más bonito puedes coser en todo el borde del cono, una pequeña decoración con el hilo de algodón, y unas cuantas estrellas por todo el cono.</li>
+                            <li>Ahora, con la silicona caliente ciérralo dándole forma de gorro de gnomo. En la punta debe quedar un pequeño agujerito.</li>
+                            <li>Pasa el hilo del pompón que hemos dejado largo por dentro del gorro y sácalo por el agujerito. Haz un nudo, para que quede bien sujeto.</li>
+                            <li>Para la nariz del gnomo corta un pequeño trozo de fieltro de color carne y ciérralo dándole forma de nariz con la silicona caliente y pégalo sobre el pompón levantando un poco el gorro.</li>
+                            <li>Como toque final puedes poner una bolita de fieltro decorativa en la punta del gorro.</li>
+                        </ol>
+                        <a href="https://talleresinfantilesbcn.com/2018/12/13/gnomos-navidenos-con-lana/">Página web oficial de la manualidad para más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia24">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <h2>El regalo es...</h2>
+                <div class="separador-bonito">R</div>
+                <div class="video-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/E8gmARGvPlI?si=ZDG5ocRhTePPR6eO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-modal" id="pop-dia25">
+        <div class="contenedor-contenido-modal">
+            <span class="cerrar-regalo">&times;</span>
+            <div class="texto-regalo-calendario">
+                <div class="no-regalo-texto">
+                        <button class="danger" id="peligro-final">!PELIGRO!</button>
+                </div>
+                <div class="regalo-final">
+                    <h2>¡FELIZ NAVIDAD!</h2>
+                    <h4>Papá Noel te desea unas felices fiestas (y Sonrisitas también)</h4>
+                    <p>Gracias por haber participado en este calendario de adviento <br>
+                    Esperamos que mínimo te lo hayas pasado bien abriendo un regalo (o no) cada día</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Página 5, calendario de adviento --------------------------------------------------------------->
+    <section class="pagina" id="juega">
+        <div class="titulo">
+            <h1>¡Juega!</h1>
+        </div>
+        <div class="contenedor-juega">
+            <div class="juegos-fotos">
+                <div class="juegos">
+                    <img class="pantalla-carga" src="images/pantalla-carga-juegos.png" alt="pantalla de carga juegos">
+                    <img class="game-over" src="images/game-over.png" alt="game over">
+                    <img class="juego1" src="images/juego1.jpg" alt="juego 1">
+                    <img class="juego2" src="images/juego2.jpg" alt="juego 1">
+                </div>
+
+            </div>
+            <div class="contenedor-botones-juega">
+                <div class="contenedor-botones-juega-botones">
+                    <button class="botones-juega" id="boton-juego-1">Atrápame si puedes</button>
+                    <button class="botones-juega" id="boton-juego-2">Bolita lanzadera</button>
+                </div>
+                <div class="contenedor-botones-reinicio">
+                    <button class="botones-juega-reinicio" id="boton-reinicio-juego">Reiniciar juegos</button>
+                </div>
+                <div class="score">
+                    <div class="contenedor-score-titulo">
+                        <h2>Score: </h2>
+                        <h2><br>Tiempo<br>restante:</h2>
+                    </div>
+                    <div class="contenedor-score-texto">
+                        <h2 class="score-texto">00</h2><br><br>
+                        <h2 class="tiempo-texto">00</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <img class="target-juego" id="target-juego-1" src="images/ojo-abierto.png" alt="target-juego">
+            <img class="target-juego" id="target-juego-2" src="images/bolita.jpg" alt="target-juego">
+            <img class="barra-juego2" src="images/barra-juego2.png" alt="barra-juego2">
+        </div>
+
+    </section>
+
+
+    <!--Página 6, compra experiencias ------------------------------------------------------------------>
+    <section class="pagina" id="experiencias">
+        <div class="titulo">
+            <h1>Compra experiencias:</h1>
+        </div>
+        <div class="contenedor-experiencias">
+            <div class="contenedor-experiencias-caja" id="experiencia1">
+                <div class="contenedor-experiencias-caja-imagen">
+                    <img src="images/peluchePapanoel.png" alt="Peluche de Papá Noel">
+                </div>
+                <div class="contenedor-experiencias-caja-texto">
+                    <h3>Peluche Papá Noel</h3>
+                    <p><strong>$15</strong></p>
+                    <button class="añadir-producto" id="añadir-peluche-papa">Agregar al carrito</button>
+
+                </div>
+
+            </div>
+
+            <div class="contenedor-experiencias-caja" id="experiencia2">
+                <div class="contenedor-experiencias-caja-imagen">
+                    <img src="images/adventCalendar.jpg" alt="Calendario de adviento">
+                </div>
+                <div class="contenedor-experiencias-caja-texto">
+                    <h3>Calendario de adviento</h3>
+                    <p><strong>$30</strong></p>
+                    <button class="añadir-producto" id="añadir-calendario">Agregar al carrito</button>
+                </div>
+
+            </div>
+
+            <div class="contenedor-experiencias-caja" id="experiencia3">
+                <div class="contenedor-experiencias-caja-imagen">
+                    <img src="images/pelucheReno.png" alt="Peluche de Rodolfo el Reno">
+                </div>
+                <div class="contenedor-experiencias-caja-texto">
+                    <h3>Peluche Rodolfo el Reno</h3>
+                    <p><strong>$25</strong></p>
+                    <button class="añadir-producto" id="añadir-peluche-rodolfo">Agregar al carrito</button>
+
+                </div>
+
+            </div>
+
+            <div class="contenedor-experiencias-caja" id="experiencia4">
+                <div class="contenedor-experiencias-caja-imagen">
+                    <img src="images/coloringBook.jpg" alt="Libro para colorear">
+                </div>
+                <div class="contenedor-experiencias-caja-texto">
+                    <h3>Libro de colorear</h3>
+                    <p><strong>$10</strong></p>
+                    <button class="añadir-producto" id="añadir-libro">Agregar al carrito</button>
+
+                </div>
+
+            </div>
+
+            <div class="contenedor-experiencias-caja" id="experiencia5">
+                <div class="contenedor-experiencias-caja-imagen">
+                    <img src="images/experienciaLaponia.jpg" alt="Foto de Laponia">
+                </div>
+                <div class="contenedor-experiencias-caja-texto">
+                    <h3>Viaje a Laponia TODO INCLUIDO</h3>
+                    <p><strong>$750</strong></p>
+                    <button class="añadir-producto" id="añadir-viaje">Agregar al carrito</button>
+
+                </div>
+
+            </div>
+
+            <div class="contenedor-experiencias-caja" id="experiencia6">
+                <div class="contenedor-experiencias-caja-imagen">
+                    <img src="images/experienciaElfo.jpg" alt="Foto de Elfos">
+                </div>
+                <div class="contenedor-experiencias-caja-texto">
+                    <h3>Conviértete en Elfo por un día</h3>
+                    <p><strong>$50</strong></p>
+                    <button class="añadir-producto" id="añadir-elfo">Agregar al carrito</button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class=footer>
+        <div class="contenedor-footer" id="contenedor-footer-1">
+            <div class="columnaFooter" id="columnaFooter-1">
+                <img class="logoFooter" src="images/logo.png" alt="logo">
+            </div>
+            <div class="columnaFooter" id="columnaFooter-2">
+                <h3>SOBRE NOSOTROS</h3>
+                <p>Santa's Trip es una organización propiedad de los elfos de Papá Noel que busca hacerse
+                 un hueco en la era digital. Con intención de crecer globalmente, Santa's Trip
+                se compromete a enseñar a los niños del mundo sobre su trabajo.</p>
+            </div>
+            <div class="columnaFooter" id="columnaFooter-3">
+                <h3>¡SÍGUENOS!</h3>
+                <div class="redes-sociales-contenedor">
+                    <ul class="redes-sociales">
+                        <li><a href="https://x.com/santaclauses" class="logos-footer" id="twitter"><img src="images/twitter.png" alt="Twitter"></a></li>
+                        <li><a href="https://www.instagram.com/santa_j_claus/?hl=es" class="logos-footer" id="instagram"><img src="images/instagram.png" alt="Instagram"></a></li>
+                        <li><a href="https://www.facebook.com/TaylorSwift/?locale=es_ES" class="logos-footer" id="facebook"><img src="images/facebook.png" alt="Facebook"></a></li>
+                        <li><a href="https://www.youtube.com/watch?v=uArFYpxDOoU" class="logos-footer" id="youtube"><img src="images/youtube.png" alt="Youtube"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedor-footer" id="contenedor-footer-2">
+            <div class="informacion-web-contenedor-1">
+                <ul class="informacion-web">
+                    <li>Condiciones de uso</li>
+                    <li>Privacidad</li>
+                    <li>Uso de cookies</li>
+                    <li>Sindicato élfico</li>
+                    <li>Patrocinio</li>
+                </ul>
+            </div>
+            <div class="informacion-web-contenedor-2">
+                <p>© 1931-2024, Todos los derechos reservados, Elfos Elficados afiliados</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

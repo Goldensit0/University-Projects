@@ -1,0 +1,111 @@
+Problem:    prob1
+Rows:       29
+Columns:    15 (15 integer, 0 binary)
+Non-zeros:  85
+Status:     INTEGER OPTIMAL
+Objective:  ingresos = 26190 (MAXimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 ingresos                26190                             
+     2 max_billetes[AV1]
+                                  90                          90 
+     3 max_billetes[AV2]
+                                 120                         120 
+     4 max_billetes[AV3]
+                                 200                         200 
+     5 max_billetes[AV4]
+                                 150                         150 
+     6 max_billetes[AV5]
+                                 190                         190 
+     7 max_peso[AV1]
+                                1699                        1700 
+     8 max_peso[AV2]
+                                2698                        2700 
+     9 max_peso[AV3]
+                                1300                        1300 
+    10 max_peso[AV4]
+                                1700                        1700 
+    11 max_peso[AV5]
+                                1993                        2000 
+    12 min_billetesTotal[estandar,AV1]
+                                  19            -0               
+    13 min_billetesTotal[estandar,AV2]
+                                  38            -0               
+    14 min_billetesTotal[estandar,AV3]
+                                 160            -0               
+    15 min_billetesTotal[estandar,AV4]
+                                 100            -0               
+    16 min_billetesTotal[estandar,AV5]
+                                 133            -0               
+    17 min_billetesTotal[leisure,AV1]
+                                  58            20               
+    18 min_billetesTotal[leisure,AV2]
+                                  31            20               
+    19 min_billetesTotal[leisure,AV3]
+                                  23            20               
+    20 min_billetesTotal[leisure,AV4]
+                                  20            20               
+    21 min_billetesTotal[leisure,AV5]
+                                  21            20               
+    22 min_billetesTotal[business,AV1]
+                                  13            10               
+    23 min_billetesTotal[business,AV2]
+                                  51            10               
+    24 min_billetesTotal[business,AV3]
+                                  17            10               
+    25 min_billetesTotal[business,AV4]
+                                  30            10               
+    26 min_billetesTotal[business,AV5]
+                                  36            10               
+    27 min_billetesPercent[estandar]
+                                   0            -0               
+    28 min_billetesPercent[leisure]
+                                 153            -0               
+    29 min_billetesPercent[business]
+                                 147            -0               
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 billetes[estandar,AV1]
+                    *             19             0               
+     2 billetes[estandar,AV2]
+                    *             38             0               
+     3 billetes[estandar,AV3]
+                    *            160             0               
+     4 billetes[estandar,AV4]
+                    *            100             0               
+     5 billetes[estandar,AV5]
+                    *            133             0               
+     6 billetes[leisure,AV1]
+                    *             58             0               
+     7 billetes[leisure,AV2]
+                    *             31             0               
+     8 billetes[leisure,AV3]
+                    *             23             0               
+     9 billetes[leisure,AV4]
+                    *             20             0               
+    10 billetes[leisure,AV5]
+                    *             21             0               
+    11 billetes[business,AV1]
+                    *             13             0               
+    12 billetes[business,AV2]
+                    *             51             0               
+    13 billetes[business,AV3]
+                    *             17             0               
+    14 billetes[business,AV4]
+                    *             30             0               
+    15 billetes[business,AV5]
+                    *             36             0               
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 2.84e-14 on row 27
+        max.rel.err = 7.87e-17 on row 27
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

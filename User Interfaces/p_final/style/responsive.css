@@ -1,0 +1,247 @@
+/* En este archivo escribiremos el código para hacer la web responsive
+
+ */
+
+@media only screen and (max-width: 1400px) {
+    body {
+        margin: 0; /* Elimina márgenes predeterminados del cuerpo */
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .texto-conoce{
+        font-size: 1.6vw;
+    }
+    .contenedor-conoce-foto{
+        background-image: url("../images/santacute-halfcropped.png");
+        background-size: cover;
+    }
+
+    .contenedor-calendario{
+        margin-left: 5vw;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    body {
+        margin: 0; /* Elimina márgenes predeterminados del cuerpo */
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .texto-conoce{
+        font-size: 2vw;
+    }
+    .contenedor-conoce-foto{
+        background-image: url("../images/santacute-cropped.png");
+        background-size: cover;
+    }
+
+
+    .contenedor-calendario{
+        grid-template-columns: 100% 0%;
+    }
+    .foto-calendario{
+        background-image: url("");
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .contador{
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+
+    #cesta{
+        height: 6vh;
+        width: 6vh;
+    }
+
+    .ribbon{
+        width: 1.5vh;
+        font-size: 1.4vh;
+        margin-right: 2vh;
+    }
+
+    .logoNavegacion{
+        height: 6vh;
+    }
+
+    #icono_usuario{
+        height: 6vh;
+        width: 6vh;
+    }
+
+    /* MENU USUARIO*/
+
+    #desplegable_usuario > button{
+        font-size: 3vh;
+    }
+
+    /* CONOCE */
+
+    .contenedor-conoce-texto{
+        padding: 3vh;
+    }
+
+    /*CARTAS*/
+
+    .contenedor-cartas-caja-texto{
+        font-size: 2.5vh;
+    }
+
+    /*SECCIÓN COMPRAS*/
+
+    .contenedor-experiencias-caja-texto h3{
+        font-size: 3vh;
+    }
+
+    .añadir-producto{
+        font-size: 2.5vh;
+        padding-bottom: 1vh;
+        padding-top: 1vh;
+    }
+
+    /*CESTA AESTHETIC*/
+
+    #total-t, #span-total{
+        font-size: 3vh;
+    }
+
+    .pop-modal-cesta h2{
+        font-size: 3vh;
+    }
+
+    #span-total {
+        margin-right: 1.5vh ;
+    }
+
+    .img-producto {
+        height: 5vh;
+    }
+
+
+    .juegos{
+        width: 90vw;
+    }
+
+    .contenedor-juega{
+        display: block;
+        padding:0;
+    }
+    .botones-juega{
+        margin:4vw;
+        width: 40vw;
+        height: 15vw;
+    }
+    .contenedor-botones-juega{
+        display: grid;
+        margin:0;
+        padding:0;
+    }
+    .contenedor-botones-juega-botones{
+        display: flex;
+        padding:0;
+        margin:0;
+        grid-row: 2;
+    }
+    .contenedor-botones-reinicio{
+        margin:0;
+        padding:0;
+
+    }
+
+    #boton-reinicio-juego{
+        margin:4vw;
+        padding:0;
+        width: 90vw;
+    }
+
+    .score{
+        display: flex;
+        width: 90vw;
+        height: 15vh;
+        margin:7vh 4vw 1vh 4vw;
+        padding:0;
+        overflow: visible;
+        grid-row: 1;
+    }
+    .score h2{
+        font-size: 2.3vw;
+        padding:0;
+    }
+    .score-texto{
+        margin:0;
+        padding:0;
+    }
+    .tiempo-texto{
+        margin: 0;
+        padding:0;
+    }
+    #target-juego-1{
+        width: 10vh;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0; /* Elimina márgenes predeterminados del cuerpo */
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    #inicio h1{
+        font-size: 4vw;
+    }
+    .contador{
+        padding-left: 10%;
+        padding-right: 10%;
+        display: grid;
+    }
+    #minutos{
+        grid-row: 2;
+    }
+    #segundos{
+        grid-row: 2;
+    }
+    .modulo-contador{
+        padding: 2%;
+    }
+
+    .contenedor-conoce{
+        margin:3vw;
+        display:grid;
+        grid-template-columns: repeat(1, 2fr);
+        overflow: scroll;
+    }
+
+    .contenedor-conoce-foto{
+        grid-row: 2;
+    }
+
+    .texto-conoce{
+        font-size: 4vw;
+    }
+
+    .contenedor-cartas{
+        display:flex;
+        flex-direction: column;
+    }
+    .contenedor-cartas h3{
+        padding: 2vw;
+        font-size: 5vw;
+    }
+    .contenedor-cartas p{
+        padding: 2vw;
+        font-size: 3vw;
+    }
+
+    .contenedor-calendario{
+        margin: 0;
+        width: 100vw;
+        overflow: scroll;
+    }
+
+}

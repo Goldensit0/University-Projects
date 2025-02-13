@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa's trip</title>
+    <link href="style/style.css" rel="stylesheet">
+    <link href="style/style-tablet.css" rel="stylesheet">
+    <link href="style/style-mobile.css" rel="stylesheet">
+    <link href="style/style-cerrar-sesion.css" rel="stylesheet">
+    <link href="style/style-editar-perfil.css" rel="stylesheet">
+    <link href="style/style-mis-cartas.css" rel="stylesheet">
+    <link rel="icon" href="images/logo.png">
+    <!--PARTE DE JAVA SCRIPT-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script/inicio_sesion.js"async></script>
+    <script src="script/registrarse.js"async></script>
+    <script src="script/temporizador.js" async></script>
+    <script src="script/display_juegos.js" async></script>
+    <script src="script/juego1_objetivo.js" async></script>
+    <script src="script/juego2.js" async></script>
+    <script src="script/actualizar_main.js" async></script>
+    <script src="script/cerrar_sesion.js" async></script>
+    <script src="script/editar-perfil.js" async></script>
+    <script src="script/mis-cartas.js" async></script>
+    <script src="script/mandar-carta.js" async></script>
+    
+</head>
+
+<body>
+    <header class="barra">
+        <img id="logo" src="images/logo.png" alt="Logo de la web">
+        <ul class="navegacion">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#PapaNoel">Papa Noel</a></li>
+            <li><a href="#Cartas">Las Cartas</a></li>
+            <li><a href="#EnviarCarta">Envía tu carta</a></li>
+            <li><a href="#Juego">¡Juega!</a></li>
+            <li><button id="boton_inicio_sesion">Iniciar sesión</button></li>
+            <li><button id="boton_registrarse">Registrarse</button></li>
+            <!--MOSTRAR SOLO DESPUÉS DEL REGISTRO-->
+            <!--<li><img id="icono_usuario" src="images/foto_usuarios.jpg" alt="Icono Usuario" style="display:none;" /></li>-->
+            <li><button id="icono_usuario" style="display:none;"></button></li>
+            <div id="menu_opciones" style="display:none;">
+                
+                <!--INCIO SESION - MI PERFIL-->
+                <button id="b_mi_perfil">Mi perfil</button>
+                <div id="popup_mi_perfil" class = "popup_mi_perfil" style="display:none">
+                    <div class="popup_mi_perfil_contenido">
+                        <h1>Editar mi perfil</h1>
+                        <!-- DE MOMENTO, IGNORAMOS LOS HIJOS -->
+                        <p>Datos del usuario</p>
+                        <p id = "datos_usuario"></p>
+
+                        <button id="editar_usuario" type="button">Editar usuario</button>
+                        <button id="editar_correo" type="button">Editar correo</button>
+                        <button id="editar_ciudad" type="button">Editar ciudad</button>
+                        <button id="editar_pais" type="button">Editar pais</button>
+                        <button id="cancelar_edicion" type="button">Cancelar</button>
+
+                    </div>
+                </div>
+                
+                <!--INCIO SESION - MIS CARTAS-->
+                <button id="b_mis_cartas">Mis cartas</button>
+                <div id="popup_cartas" class="popup_cartas" style="display:none">
+                    <div class = "popup_cartas_contenido">
+                        <h1>Mis Cartas</h1>
+                        
+                        <div id="cartas_guardadas"></div> <!--aquí iremos añadiendo las cartas-->
+                        
+                        <button id="salir_cartas" type="button">Salir</button>
+                    </div>
+                </div>
+              
+                
+            
+                <!--INCIO SESION - CERRAR SESION-->
+                <button id="b_cerrar_sesion">Cerrar sesión</button>
+                <div id="popup_cerrar_sesion" class="popup_cerrar_sesion" style="display:none"> <!-- empieza oculto-->
+                    <div class="popup_cerrar_sesion_contenido">
+                        <p>¿Seguro que quieres cerrar sesión?</p>
+                        <button id="confirmar_cerrar_sesion" type="submit">Cerrar Sesión</button>
+                        <button id="cancelar_cerrar_sesion" type="button">Cancelar</button> 
+                    </div>
+                </div>
+
+            </div>
+        </ul>
+    </header>
+
+    <main>
+        <section id="Home"> <!--SECCION 2-->
+            <h1>Sigue a Papá Noel</h1>
+            <h3 id="temporizador"></h3>
+
+            <div class="boton_inicial">
+                <button class="empezar" disabled><span>Empezar</span></button>
+            </div>
+        </section>
+
+        <section id="PapaNoel"> <!--SECCION 2-->
+            
+            <h1>Papá Noel</h1>
+
+            <div class="dos_columnas"> <!--id para dividir seccion en dos columnas-->
+                <div class="c1">
+                    <img src="images/Santa.png" alt="Papa Noel" class="foto_noel">
+                </div>
+                <div class="c2">
+                    <h2>¿Quién es Papá Noel?</h2>
+                    <p>Papá Noel es un personaje legendario de origen nórdico que según la cultura occidental trae regalos a los niños por Navidad.
+                        Existe una leyenda urbana de que fue CocaCola quien dio origen a esta leyenda (por el famoso traje rojo), 
+                        esto es FALSO, solo repopularizó su figura tras usarlo como protagonista en un anuncio
+                        Este anuncio se realizó con permisos del verdadero Papá Noel, pues cada año veía una bajada
+                        en la cantidad de cartas que recibía. El del anuncio es un actor, pues se grabó próximo a Navidad, y él tenía demasiada 
+                        carga de trabajo en ese momento. Papá Noel es real y os quiere a todos.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="Cartas"> <!--SECCION 3-->
+            
+            <h1>Las Cartas</h1>
+            
+            <div class="matriz_cartas">
+                <div class="item-matriz">
+                    <h2>Miki</h2>
+                    <img src="images/cartas/carta1.jpg" alt="Carta1" class="foto_carta">
+                    <h3>Madrid, España</h3>
+                    <p>"Y quiero una estufa, y una lavadora, y una aspiradora, y una nintendo switch, y un bumerán,
+                        y una bicicleta, y un ordenador, y un patinete eléctrico, y una taladradora Bosch Easyimpact 600 Taladro percutor,
+                        y un castillo hinchable, y un peluche, y una claufetera y un gato cósmico. ¡Gracias!"
+                    </p>
+                </div>
+                
+                <div class="item-matriz">
+                    <h2>Orión</h2>
+                    <img src="images/cartas/carta2.jpg" alt="Carta2" class="foto_carta">
+                    <h3>Oporto, Portugal</h3>
+                    <p>"Hola me llamo Orión y por Navidad quiero conquistar el planeta y
+                        que todos sean mis esclavos y que todos los días me den comida de la 
+                        húmeda y no pienso. Miau." 
+                    </p>
+                </div>
+                
+                <div class="item-matriz">
+                    <h2>Runa</h2>
+                    <img src="images/cartas/carta3.jpg" alt="Carta3" class="foto_carta">
+                    <h3>Almería, España</h3>
+                    <p>"HOLA. Me gustan las pelotas. Querido Papá Noel, me gustaría que me
+                        trajeras una pelota para poder jugar todo el día (porfi no me traigas
+                        carbón como el año pasado). Me he portado muy muy bien, menos con el
+                        cartero porque es mala gente y le odio." 
+                    </p>
+                </div>
+                
+                <div class="item-matriz">
+                    <h2>Lula</h2>
+                    <img src="images/cartas/carta4.jpg" alt="Carta4" class="foto_carta">
+                    <h3>Roma, Italia</h3>
+                    <p>"Esto que es yo no creo en estas chorradas digo miau miau miau..."</p>
+                </div>
+                
+                <div  class="item-matriz">
+                    <h2>Kiara</h2>
+                    <img src="images/cartas/carta5.jpg" alt="Carta5" class="foto_carta">
+                    <h3>Tehrán, Persia</h3>
+                    <p>"Mi muy estimado Sr. Noel, como le comentaba en anteriores cartas considero
+                        pertinente la entrega de un regalo acorde, como sería el Catshion Artic Rascador
+                        para gatos. Lo espero con ansias. Muchas gracias y espero verle pronto, Kiara. "
+                    </p>
+                </div>
+                
+                <div  class="item-matriz">
+                    <h2>Yoko</h2>
+                    <img src="images/cartas/carta6.jpg" alt="Carta6" class="foto_carta">
+                    <h3>León, España</h3>
+                    <p>"guau guau guau (quiero un palo gracias papá)" 
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="EnviarCarta"> <!--SECCION 4-->
+            
+            <h1>Envía tu carta</h1>
+
+            <div class="matriz_formulario">
+                <!--<form id="form_enviar_carta" method="post"> -->
+                <form id="form_enviar_carta"> 
+                        <div class="items_matriz_formulario nombre">
+                            
+                            <label for="nombre">Nombre:</label>
+                            <input placeholder="Introduce tu nombre" type="text" name="nombre" id="nombre" required>
+                            
+                        </div>
+
+                        <div class="items_matriz_formulario email">
+                            
+                            <label for="email">Email:</label>
+                            <input placeholder="tuemail@aqui.es" type="email" name="email" id="email" required>
+                            
+                        </div>
+
+                        <div class="items_matriz_formulario ciudad">
+                            
+                            <label for="ciudad">Ciudad:</label>
+                            <input placeholder="Tu ciudad" type="text" name="ciudad" id="ciudad" required>
+                            
+                        </div>
+
+                        <div class="items_matriz_formulario pais">
+                            
+                            <label for="pais">Pais:</label>
+                            <input placeholder="Tu país" type="text" name="pais" id="pais" required>
+                            
+                        </div>
+
+                        <div class="items_matriz_formulario carta">
+                            
+                            <label for="carta">Carta:</label>
+                            <textarea placeholder="¿Qué le quieres pedir a Papá Noel?" name="carta" id="carta" required></textarea>
+                            
+                        </div>
+
+                        <div class="boton_s4_div">
+                            <button class="boton_s4" type="submit">Enviar</button>
+                        </div>
+                    
+
+                </form>
+            </div>
+        </section>
+        
+        <section id="Juego"> <!--SECCION 5-->
+            
+            <h1>¡Juega!</h1>
+                <div  class="dos_columnas_2">
+                    <div class="col_botones">        
+                        <button class="botoncito" onclick="showImage('imagen1')">Santa Hunt</button>
+                        <button class="botoncito" onclick="showImage('imagen2')">Santa Tictac</button>
+                        <button class="botoncito" onclick="showImage('imagen3')">Santa Run</button>
+                    </div>
+
+                    <div id="col_juegos">
+                            <img class="imagen_juego" id="imagen1" src="images/Juego1.jpg" alt="Juego1">
+                            <img class="imagen_juego" id="imagen3" src="images/Juego2.avif" alt="Juego3">     
+                            <img src="images/objetivo_juego1.webp" alt="Objetivo del juego" id="objetivo_juego">
+                            <div id="juego1_caja">
+                                <h3 class="caja_juego">Puntuación:</h3>
+                                <p  class="caja_juego"id="puntuacion">0</p>
+                                <h3 class="caja_juego">Tiempo:</h3>
+                                <p  class="caja_juego"id="tiempo">0</p>
+                            </div>
+                            <div class="imagen_juego" id="imagen2">
+                                <h3 id="titulo-tictac">Tic Tac Toe</h3>
+                                <div class="board" id="board"></div>
+                                <p id="message"></p>
+                                <button id="boton_juego2" onclick="resetGame()">Reiniciar Juego</button>
+                            </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer"> <!--FOOTER-->
+        <ul class="redes">
+            <li><a href="https://www.instagram.com"><img src="images/instagram.png" alt="instagram" class="logo_footer"></a></li>
+            <li><a href="https://www.x.com"><img src="images/twitter.png" alt="twitter" class="logo_footer"></a></li>
+            <li><a href="https://www.youtube.com/watch?v=bPhmpRm_XGo"><img src="images/youtube.png" alt="youtube" class="logo_footer"></a></li>
+        </ul>
+        
+        <ul class="enlaces_utiles">
+            <li id="enlaces_h">Enlaces útiles</li>
+            <li><a href="https://www.uc3m.es/inicio/proteccion-datos">Ley de protección de datos</a></li>
+            <li><a href="https://www.youtube.com/watch?v=pvlkYYdIBV0">Información muy relevante</a></li>
+            <li><a href="https://www.youtube.com/watch?v=j9ZJMZUPTBA">Información super esencial</a></li>
+        </ul>
+
+        <div class="logo_y_copy">
+            <a href="#Home"><img src="images/logo.png" alt="logo" class="logo_footer"></a>
+            <p>© 2020 Santa's trip</p>
+
+        </div>
+    </footer>
+</body>
+</html>

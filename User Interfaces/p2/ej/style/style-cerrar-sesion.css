@@ -1,0 +1,48 @@
+/*importamos la fuente personalizada*/
+/*vamos a importar una fuente "navideña" para home*/
+@font-face {
+    font-family: "xmas";
+    src: url("../xmas.ttf");
+  }
+
+/* Fondo oscuro para el popup */
+#popup_cerrar_sesion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* cubito */
+.popup_cerrar_sesion_contenido {
+    background-color: rgb(255, 214, 214);
+    padding: 3vh;
+    border-radius: 2vh;
+    width: 100vh;
+    text-align: center;
+}
+
+.popup_cerrar_sesion p{
+    color: rgb(70, 21, 21);
+    font-family: xmas;
+    font-size: 10vh;
+}
+
+.popup_cerrar_sesion button{
+    background-color: rgb(70, 21, 21);
+    border-radius: 2vh;
+    color: rgb(255, 214, 214);
+    font-family: xmas;
+    font-size: 4vh;
+    padding: 1vh;
+}
+
+.popup_cerrar_sesion button:hover{
+    background-color: rgb(104, 54, 54);
+}

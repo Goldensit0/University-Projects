@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "xmas";
+    src: url("../xmas.ttf");
+  }
+
+  .inicio_sesion{
+    background-image: url("../images/fondo_inicio_registro.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-top: 10vh;
+    padding-bottom: 30vh;
+    text-align: center;
+
+}
+
+.inicio_sesion h1{
+    font-family: xmas;
+    font-size: 15vh;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.inicio_sesion label{
+    font-family: arial;
+    font-weight: bold;
+    font-size: 6vh;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+#formulario_inicio_sesion{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+    margin: 20vh;
+    
+}
+
+#formulario_inicio_sesion input{
+    border-radius: 3vh;
+    font-size: 4vh;
+    font-family: arial;
+    box-shadow: 1px 1px 2px rgb(92, 51, 12);
+    margin-bottom: 5vh;
+}
+
+#formulario_inicio_sesion select{
+    border-radius: 3vh;
+    font-size: 4vh;
+    font-family: arial;
+    box-shadow: 1px 1px 2px rgb(92, 51, 12);
+    margin-bottom: 5vh;
+}
+
+#formulario_inicio_sesion button{
+    background-color: white;
+    border-radius: 2vh;
+    color: rgb(70, 21, 21);
+    font-family: xmas;
+    font-size: 8vh;
+    padding: 1vh;
+    margin: 2vh;
+}
+    
+#formulario_inicio_sesion button:hover{
+    background-color: rgb(255, 230, 230);
+}
+
+#dos_botoncitos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

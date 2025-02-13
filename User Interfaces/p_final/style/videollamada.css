@@ -1,0 +1,88 @@
+/*importamos la fuente personalizada*/
+@font-face {
+    font-family: 'xmas';
+    src: url("../images/Home_Christmas_1_.woff") format('woff');
+    font-style: normal;
+}
+
+/* Fondo oscuro para el popup */
+#popup_videollamada {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* cubito */
+.popup_videollamada_contenido {
+    background-color: rgba(65, 98, 82, 0.9);
+    padding: 3vh;
+    border-radius: 2vh;
+    width: 100vh;
+    text-align: center;
+}
+
+.popup_videollamada{
+    padding-top: 4vh;
+    padding-bottom: 30vh;
+    text-align: center;
+}
+
+
+.popup_videollamada p{
+    font-family: xmas;
+    font-size: 5vh;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.popup_videollamada button{
+    background-color: #30423d;
+    border-radius: 2vh;
+    color: white;
+    font-family: xmas;
+    font-size: 4vh;
+    padding: 1vh;
+    margin: 2vh;
+}
+
+#llamar{
+    background-color: rgb(105, 155, 29);
+}
+#colgar{
+    background-color: rgb(182, 18, 18);
+}
+
+.popup_videollamada button:hover{
+    background-color: rgb(104, 54, 54);
+}
+
+.contenedor_video_carga {
+    width: 100%;
+    height: 60vh;
+    background-color: #24312d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #ccc; /* Borde alrededor del cuadro */
+}
+
+.pantalla_carga {
+    display: none;
+    width: 100%;
+    height: 100vh; /*altura de la ventana (si pongo 60vh la del contenedor quedan margenes)*/
+    background-image: url("../images/conectando.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}

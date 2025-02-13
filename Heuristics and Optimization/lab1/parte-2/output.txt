@@ -1,0 +1,1124 @@
+Problem:    part
+Rows:       418
+Columns:    135 (135 integer, 120 binary)
+Non-zeros:  789
+Status:     INTEGER OPTIMAL
+Objective:  ingresos = 21690 (MAXimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 ingresos                21690                             
+     2 max_billetes[AV1]
+                                  90                          90 
+     3 max_billetes[AV2]
+                                 120                         120 
+     4 max_billetes[AV3]
+                                 200                         200 
+     5 max_billetes[AV4]
+                                 150                         150 
+     6 max_billetes[AV5]
+                                 190                         190 
+     7 max_peso[AV1]
+                                1698                        1700 
+     8 max_peso[AV2]
+                                2700                        2700 
+     9 max_peso[AV3]
+                                1300                        1300 
+    10 max_peso[AV4]
+                                1699                        1700 
+    11 max_peso[AV5]
+                                1993                        2000 
+    12 min_billetesTotal[estandar,AV1]
+                                  18            -0               
+    13 min_billetesTotal[estandar,AV2]
+                                  40            -0               
+    14 min_billetesTotal[estandar,AV3]
+                                 160            -0               
+    15 min_billetesTotal[estandar,AV4]
+                                  99            -0               
+    16 min_billetesTotal[estandar,AV5]
+                                 133            -0               
+    17 min_billetesTotal[leisure,AV1]
+                                  60            20               
+    18 min_billetesTotal[leisure,AV2]
+                                  27            20               
+    19 min_billetesTotal[leisure,AV3]
+                                  23            20               
+    20 min_billetesTotal[leisure,AV4]
+                                  22            20               
+    21 min_billetesTotal[leisure,AV5]
+                                  21            20               
+    22 min_billetesTotal[business,AV1]
+                                  12            10               
+    23 min_billetesTotal[business,AV2]
+                                  53            10               
+    24 min_billetesTotal[business,AV3]
+                                  17            10               
+    25 min_billetesTotal[business,AV4]
+                                  29            10               
+    26 min_billetesTotal[business,AV5]
+                                  36            10               
+    27 min_billetesPercent[estandar]
+                                   0            -0               
+    28 min_billetesPercent[leisure]
+                                 153            -0               
+    29 min_billetesPercent[business]
+                                 147            -0               
+    30 un_slot[AV1]                1             1             = 
+    31 un_slot[AV2]                1             1             = 
+    32 un_slot[AV3]                1             1             = 
+    33 un_slot[AV4]                1             1             = 
+    34 un_slot[AV5]                1             1             = 
+    35 slot_por_avion[P1,S1]
+                                   0                           1 
+    36 slot_por_avion[P1,S2]
+                                   0                           1 
+    37 slot_por_avion[P1,S3]
+                                   0                           1 
+    38 slot_por_avion[P1,S4]
+                                   0                           1 
+    39 slot_por_avion[P1,S5]
+                                   1                           1 
+    40 slot_por_avion[P1,S6]
+                                   0                           1 
+    41 slot_por_avion[P2,S1]
+                                   0                           1 
+    42 slot_por_avion[P2,S2]
+                                   0                           1 
+    43 slot_por_avion[P2,S3]
+                                   0                           1 
+    44 slot_por_avion[P2,S4]
+                                   1                           1 
+    45 slot_por_avion[P2,S5]
+                                   0                           1 
+    46 slot_por_avion[P2,S6]
+                                   0                           1 
+    47 slot_por_avion[P3,S1]
+                                   0                           1 
+    48 slot_por_avion[P3,S2]
+                                   1                           1 
+    49 slot_por_avion[P3,S3]
+                                   0                           1 
+    50 slot_por_avion[P3,S4]
+                                   0                           1 
+    51 slot_por_avion[P3,S5]
+                                   0                           1 
+    52 slot_por_avion[P3,S6]
+                                   0                           1 
+    53 slot_por_avion[P4,S1]
+                                   1                           1 
+    54 slot_por_avion[P4,S2]
+                                   0                           1 
+    55 slot_por_avion[P4,S3]
+                                   0                           1 
+    56 slot_por_avion[P4,S4]
+                                   0                           1 
+    57 slot_por_avion[P4,S5]
+                                   0                           1 
+    58 slot_por_avion[P4,S6]
+                                   1                           1 
+    59 slot_libre[AV1,P1,S1]
+                                   0            -0               
+    60 slot_libre[AV1,P1,S2]
+                                   0            -0               
+    61 slot_libre[AV1,P1,S3]
+                                   0            -0               
+    62 slot_libre[AV1,P1,S4]
+                                   0            -0               
+    63 slot_libre[AV1,P1,S5]
+                                   0            -1               
+    64 slot_libre[AV1,P1,S6]
+                                   0            -1               
+    65 slot_libre[AV1,P2,S1]
+                                   0            -0               
+    66 slot_libre[AV1,P2,S2]
+                                   0            -0               
+    67 slot_libre[AV1,P2,S3]
+                                   0            -1               
+    68 slot_libre[AV1,P2,S4]
+                                   0            -1               
+    69 slot_libre[AV1,P2,S5]
+                                   0            -0               
+    70 slot_libre[AV1,P2,S6]
+                                   0            -0               
+    71 slot_libre[AV1,P3,S1]
+                                   0            -1               
+    72 slot_libre[AV1,P3,S2]
+                                  -1            -1               
+    73 slot_libre[AV1,P3,S3]
+                                   0            -1               
+    74 slot_libre[AV1,P3,S4]
+                                   0            -0               
+    75 slot_libre[AV1,P3,S5]
+                                   0            -0               
+    76 slot_libre[AV1,P3,S6]
+                                   0            -1               
+    77 slot_libre[AV1,P4,S1]
+                                   0            -1               
+    78 slot_libre[AV1,P4,S2]
+                                   0            -0               
+    79 slot_libre[AV1,P4,S3]
+                                   0            -0               
+    80 slot_libre[AV1,P4,S4]
+                                   0            -0               
+    81 slot_libre[AV1,P4,S5]
+                                   0            -1               
+    82 slot_libre[AV1,P4,S6]
+                                   0            -1               
+    83 slot_libre[AV2,P1,S1]
+                                   0            -0               
+    84 slot_libre[AV2,P1,S2]
+                                   0            -0               
+    85 slot_libre[AV2,P1,S3]
+                                   0            -0               
+    86 slot_libre[AV2,P1,S4]
+                                   0            -0               
+    87 slot_libre[AV2,P1,S5]
+                                   0            -1               
+    88 slot_libre[AV2,P1,S6]
+                                   0            -1               
+    89 slot_libre[AV2,P2,S1]
+                                   0            -0               
+    90 slot_libre[AV2,P2,S2]
+                                   0            -0               
+    91 slot_libre[AV2,P2,S3]
+                                   0            -1               
+    92 slot_libre[AV2,P2,S4]
+                                   0            -1               
+    93 slot_libre[AV2,P2,S5]
+                                   0            -0               
+    94 slot_libre[AV2,P2,S6]
+                                   0            -0               
+    95 slot_libre[AV2,P3,S1]
+                                   0            -1               
+    96 slot_libre[AV2,P3,S2]
+                                   0            -1               
+    97 slot_libre[AV2,P3,S3]
+                                   0            -1               
+    98 slot_libre[AV2,P3,S4]
+                                   0            -0               
+    99 slot_libre[AV2,P3,S5]
+                                   0            -0               
+   100 slot_libre[AV2,P3,S6]
+                                   0            -1               
+   101 slot_libre[AV2,P4,S1]
+                                  -1            -1               
+   102 slot_libre[AV2,P4,S2]
+                                   0            -0               
+   103 slot_libre[AV2,P4,S3]
+                                   0            -0               
+   104 slot_libre[AV2,P4,S4]
+                                   0            -0               
+   105 slot_libre[AV2,P4,S5]
+                                   0            -1               
+   106 slot_libre[AV2,P4,S6]
+                                   0            -1               
+   107 slot_libre[AV3,P1,S1]
+                                   0            -0               
+   108 slot_libre[AV3,P1,S2]
+                                   0            -0               
+   109 slot_libre[AV3,P1,S3]
+                                   0            -0               
+   110 slot_libre[AV3,P1,S4]
+                                   0            -0               
+   111 slot_libre[AV3,P1,S5]
+                                   0            -1               
+   112 slot_libre[AV3,P1,S6]
+                                   0            -1               
+   113 slot_libre[AV3,P2,S1]
+                                   0            -0               
+   114 slot_libre[AV3,P2,S2]
+                                   0            -0               
+   115 slot_libre[AV3,P2,S3]
+                                   0            -1               
+   116 slot_libre[AV3,P2,S4]
+                                  -1            -1               
+   117 slot_libre[AV3,P2,S5]
+                                   0            -0               
+   118 slot_libre[AV3,P2,S6]
+                                   0            -0               
+   119 slot_libre[AV3,P3,S1]
+                                   0            -1               
+   120 slot_libre[AV3,P3,S2]
+                                   0            -1               
+   121 slot_libre[AV3,P3,S3]
+                                   0            -1               
+   122 slot_libre[AV3,P3,S4]
+                                   0            -0               
+   123 slot_libre[AV3,P3,S5]
+                                   0            -0               
+   124 slot_libre[AV3,P3,S6]
+                                   0            -1               
+   125 slot_libre[AV3,P4,S1]
+                                   0            -1               
+   126 slot_libre[AV3,P4,S2]
+                                   0            -0               
+   127 slot_libre[AV3,P4,S3]
+                                   0            -0               
+   128 slot_libre[AV3,P4,S4]
+                                   0            -0               
+   129 slot_libre[AV3,P4,S5]
+                                   0            -1               
+   130 slot_libre[AV3,P4,S6]
+                                   0            -1               
+   131 slot_libre[AV4,P1,S1]
+                                   0            -0               
+   132 slot_libre[AV4,P1,S2]
+                                   0            -0               
+   133 slot_libre[AV4,P1,S3]
+                                   0            -0               
+   134 slot_libre[AV4,P1,S4]
+                                   0            -0               
+   135 slot_libre[AV4,P1,S5]
+                                  -1            -1               
+   136 slot_libre[AV4,P1,S6]
+                                   0            -1               
+   137 slot_libre[AV4,P2,S1]
+                                   0            -0               
+   138 slot_libre[AV4,P2,S2]
+                                   0            -0               
+   139 slot_libre[AV4,P2,S3]
+                                   0            -1               
+   140 slot_libre[AV4,P2,S4]
+                                   0            -1               
+   141 slot_libre[AV4,P2,S5]
+                                   0            -0               
+   142 slot_libre[AV4,P2,S6]
+                                   0            -0               
+   143 slot_libre[AV4,P3,S1]
+                                   0            -1               
+   144 slot_libre[AV4,P3,S2]
+                                   0            -1               
+   145 slot_libre[AV4,P3,S3]
+                                   0            -1               
+   146 slot_libre[AV4,P3,S4]
+                                   0            -0               
+   147 slot_libre[AV4,P3,S5]
+                                   0            -0               
+   148 slot_libre[AV4,P3,S6]
+                                   0            -1               
+   149 slot_libre[AV4,P4,S1]
+                                   0            -1               
+   150 slot_libre[AV4,P4,S2]
+                                   0            -0               
+   151 slot_libre[AV4,P4,S3]
+                                   0            -0               
+   152 slot_libre[AV4,P4,S4]
+                                   0            -0               
+   153 slot_libre[AV4,P4,S5]
+                                   0            -1               
+   154 slot_libre[AV4,P4,S6]
+                                   0            -1               
+   155 slot_libre[AV5,P1,S1]
+                                   0            -0               
+   156 slot_libre[AV5,P1,S2]
+                                   0            -0               
+   157 slot_libre[AV5,P1,S3]
+                                   0            -0               
+   158 slot_libre[AV5,P1,S4]
+                                   0            -0               
+   159 slot_libre[AV5,P1,S5]
+                                   0            -1               
+   160 slot_libre[AV5,P1,S6]
+                                   0            -1               
+   161 slot_libre[AV5,P2,S1]
+                                   0            -0               
+   162 slot_libre[AV5,P2,S2]
+                                   0            -0               
+   163 slot_libre[AV5,P2,S3]
+                                   0            -1               
+   164 slot_libre[AV5,P2,S4]
+                                   0            -1               
+   165 slot_libre[AV5,P2,S5]
+                                   0            -0               
+   166 slot_libre[AV5,P2,S6]
+                                   0            -0               
+   167 slot_libre[AV5,P3,S1]
+                                   0            -1               
+   168 slot_libre[AV5,P3,S2]
+                                   0            -1               
+   169 slot_libre[AV5,P3,S3]
+                                   0            -1               
+   170 slot_libre[AV5,P3,S4]
+                                   0            -0               
+   171 slot_libre[AV5,P3,S5]
+                                   0            -0               
+   172 slot_libre[AV5,P3,S6]
+                                   0            -1               
+   173 slot_libre[AV5,P4,S1]
+                                   0            -1               
+   174 slot_libre[AV5,P4,S2]
+                                   0            -0               
+   175 slot_libre[AV5,P4,S3]
+                                   0            -0               
+   176 slot_libre[AV5,P4,S4]
+                                   0            -0               
+   177 slot_libre[AV5,P4,S5]
+                                   0            -1               
+   178 slot_libre[AV5,P4,S6]
+                                  -1            -1               
+   179 aterrizaje_llegada[AV1,P1,S1]
+                                   0            -0               
+   180 aterrizaje_llegada[AV1,P1,S2]
+                                   0            -0               
+   181 aterrizaje_llegada[AV1,P1,S3]
+                                   0            -0               
+   182 aterrizaje_llegada[AV1,P1,S4]
+                                   0            -0               
+   183 aterrizaje_llegada[AV1,P1,S5]
+                                   0            -0               
+   184 aterrizaje_llegada[AV1,P1,S6]
+                                   0            -0               
+   185 aterrizaje_llegada[AV1,P2,S1]
+                                   0            -0               
+   186 aterrizaje_llegada[AV1,P2,S2]
+                                   0            -0               
+   187 aterrizaje_llegada[AV1,P2,S3]
+                                   0            -0               
+   188 aterrizaje_llegada[AV1,P2,S4]
+                                   0            -0               
+   189 aterrizaje_llegada[AV1,P2,S5]
+                                   0            -0               
+   190 aterrizaje_llegada[AV1,P2,S6]
+                                   0            -0               
+   191 aterrizaje_llegada[AV1,P3,S1]
+                                   0            -0               
+   192 aterrizaje_llegada[AV1,P3,S2]
+                                   5            -0               
+   193 aterrizaje_llegada[AV1,P3,S3]
+                                   0            -0               
+   194 aterrizaje_llegada[AV1,P3,S4]
+                                   0            -0               
+   195 aterrizaje_llegada[AV1,P3,S5]
+                                   0            -0               
+   196 aterrizaje_llegada[AV1,P3,S6]
+                                   0            -0               
+   197 aterrizaje_llegada[AV1,P4,S1]
+                                   0            -0               
+   198 aterrizaje_llegada[AV1,P4,S2]
+                                   0            -0               
+   199 aterrizaje_llegada[AV1,P4,S3]
+                                   0            -0               
+   200 aterrizaje_llegada[AV1,P4,S4]
+                                   0            -0               
+   201 aterrizaje_llegada[AV1,P4,S5]
+                                   0            -0               
+   202 aterrizaje_llegada[AV1,P4,S6]
+                                   0            -0               
+   203 aterrizaje_llegada[AV2,P1,S1]
+                                   0            -0               
+   204 aterrizaje_llegada[AV2,P1,S2]
+                                   0            -0               
+   205 aterrizaje_llegada[AV2,P1,S3]
+                                   0            -0               
+   206 aterrizaje_llegada[AV2,P1,S4]
+                                   0            -0               
+   207 aterrizaje_llegada[AV2,P1,S5]
+                                   0            -0               
+   208 aterrizaje_llegada[AV2,P1,S6]
+                                   0            -0               
+   209 aterrizaje_llegada[AV2,P2,S1]
+                                   0            -0               
+   210 aterrizaje_llegada[AV2,P2,S2]
+                                   0            -0               
+   211 aterrizaje_llegada[AV2,P2,S3]
+                                   0            -0               
+   212 aterrizaje_llegada[AV2,P2,S4]
+                                   0            -0               
+   213 aterrizaje_llegada[AV2,P2,S5]
+                                   0            -0               
+   214 aterrizaje_llegada[AV2,P2,S6]
+                                   0            -0               
+   215 aterrizaje_llegada[AV2,P3,S1]
+                                   0            -0               
+   216 aterrizaje_llegada[AV2,P3,S2]
+                                   0            -0               
+   217 aterrizaje_llegada[AV2,P3,S3]
+                                   0            -0               
+   218 aterrizaje_llegada[AV2,P3,S4]
+                                   0            -0               
+   219 aterrizaje_llegada[AV2,P3,S5]
+                                   0            -0               
+   220 aterrizaje_llegada[AV2,P3,S6]
+                                   0            -0               
+   221 aterrizaje_llegada[AV2,P4,S1]
+                                   5            -0               
+   222 aterrizaje_llegada[AV2,P4,S2]
+                                   0            -0               
+   223 aterrizaje_llegada[AV2,P4,S3]
+                                   0            -0               
+   224 aterrizaje_llegada[AV2,P4,S4]
+                                   0            -0               
+   225 aterrizaje_llegada[AV2,P4,S5]
+                                   0            -0               
+   226 aterrizaje_llegada[AV2,P4,S6]
+                                   0            -0               
+   227 aterrizaje_llegada[AV3,P1,S1]
+                                   0            -0               
+   228 aterrizaje_llegada[AV3,P1,S2]
+                                   0            -0               
+   229 aterrizaje_llegada[AV3,P1,S3]
+                                   0            -0               
+   230 aterrizaje_llegada[AV3,P1,S4]
+                                   0            -0               
+   231 aterrizaje_llegada[AV3,P1,S5]
+                                   0            -0               
+   232 aterrizaje_llegada[AV3,P1,S6]
+                                   0            -0               
+   233 aterrizaje_llegada[AV3,P2,S1]
+                                   0            -0               
+   234 aterrizaje_llegada[AV3,P2,S2]
+                                   0            -0               
+   235 aterrizaje_llegada[AV3,P2,S3]
+                                   0            -0               
+   236 aterrizaje_llegada[AV3,P2,S4]
+                                   5            -0               
+   237 aterrizaje_llegada[AV3,P2,S5]
+                                   0            -0               
+   238 aterrizaje_llegada[AV3,P2,S6]
+                                   0            -0               
+   239 aterrizaje_llegada[AV3,P3,S1]
+                                   0            -0               
+   240 aterrizaje_llegada[AV3,P3,S2]
+                                   0            -0               
+   241 aterrizaje_llegada[AV3,P3,S3]
+                                   0            -0               
+   242 aterrizaje_llegada[AV3,P3,S4]
+                                   0            -0               
+   243 aterrizaje_llegada[AV3,P3,S5]
+                                   0            -0               
+   244 aterrizaje_llegada[AV3,P3,S6]
+                                   0            -0               
+   245 aterrizaje_llegada[AV3,P4,S1]
+                                   0            -0               
+   246 aterrizaje_llegada[AV3,P4,S2]
+                                   0            -0               
+   247 aterrizaje_llegada[AV3,P4,S3]
+                                   0            -0               
+   248 aterrizaje_llegada[AV3,P4,S4]
+                                   0            -0               
+   249 aterrizaje_llegada[AV3,P4,S5]
+                                   0            -0               
+   250 aterrizaje_llegada[AV3,P4,S6]
+                                   0            -0               
+   251 aterrizaje_llegada[AV4,P1,S1]
+                                   0            -0               
+   252 aterrizaje_llegada[AV4,P1,S2]
+                                   0            -0               
+   253 aterrizaje_llegada[AV4,P1,S3]
+                                   0            -0               
+   254 aterrizaje_llegada[AV4,P1,S4]
+                                   0            -0               
+   255 aterrizaje_llegada[AV4,P1,S5]
+                                   5            -0               
+   256 aterrizaje_llegada[AV4,P1,S6]
+                                   0            -0               
+   257 aterrizaje_llegada[AV4,P2,S1]
+                                   0            -0               
+   258 aterrizaje_llegada[AV4,P2,S2]
+                                   0            -0               
+   259 aterrizaje_llegada[AV4,P2,S3]
+                                   0            -0               
+   260 aterrizaje_llegada[AV4,P2,S4]
+                                   0            -0               
+   261 aterrizaje_llegada[AV4,P2,S5]
+                                   0            -0               
+   262 aterrizaje_llegada[AV4,P2,S6]
+                                   0            -0               
+   263 aterrizaje_llegada[AV4,P3,S1]
+                                   0            -0               
+   264 aterrizaje_llegada[AV4,P3,S2]
+                                   0            -0               
+   265 aterrizaje_llegada[AV4,P3,S3]
+                                   0            -0               
+   266 aterrizaje_llegada[AV4,P3,S4]
+                                   0            -0               
+   267 aterrizaje_llegada[AV4,P3,S5]
+                                   0            -0               
+   268 aterrizaje_llegada[AV4,P3,S6]
+                                   0            -0               
+   269 aterrizaje_llegada[AV4,P4,S1]
+                                   0            -0               
+   270 aterrizaje_llegada[AV4,P4,S2]
+                                   0            -0               
+   271 aterrizaje_llegada[AV4,P4,S3]
+                                   0            -0               
+   272 aterrizaje_llegada[AV4,P4,S4]
+                                   0            -0               
+   273 aterrizaje_llegada[AV4,P4,S5]
+                                   0            -0               
+   274 aterrizaje_llegada[AV4,P4,S6]
+                                   0            -0               
+   275 aterrizaje_llegada[AV5,P1,S1]
+                                   0            -0               
+   276 aterrizaje_llegada[AV5,P1,S2]
+                                   0            -0               
+   277 aterrizaje_llegada[AV5,P1,S3]
+                                   0            -0               
+   278 aterrizaje_llegada[AV5,P1,S4]
+                                   0            -0               
+   279 aterrizaje_llegada[AV5,P1,S5]
+                                   0            -0               
+   280 aterrizaje_llegada[AV5,P1,S6]
+                                   0            -0               
+   281 aterrizaje_llegada[AV5,P2,S1]
+                                   0            -0               
+   282 aterrizaje_llegada[AV5,P2,S2]
+                                   0            -0               
+   283 aterrizaje_llegada[AV5,P2,S3]
+                                   0            -0               
+   284 aterrizaje_llegada[AV5,P2,S4]
+                                   0            -0               
+   285 aterrizaje_llegada[AV5,P2,S5]
+                                   0            -0               
+   286 aterrizaje_llegada[AV5,P2,S6]
+                                   0            -0               
+   287 aterrizaje_llegada[AV5,P3,S1]
+                                   0            -0               
+   288 aterrizaje_llegada[AV5,P3,S2]
+                                   0            -0               
+   289 aterrizaje_llegada[AV5,P3,S3]
+                                   0            -0               
+   290 aterrizaje_llegada[AV5,P3,S4]
+                                   0            -0               
+   291 aterrizaje_llegada[AV5,P3,S5]
+                                   0            -0               
+   292 aterrizaje_llegada[AV5,P3,S6]
+                                   0            -0               
+   293 aterrizaje_llegada[AV5,P4,S1]
+                                   0            -0               
+   294 aterrizaje_llegada[AV5,P4,S2]
+                                   0            -0               
+   295 aterrizaje_llegada[AV5,P4,S3]
+                                   0            -0               
+   296 aterrizaje_llegada[AV5,P4,S4]
+                                   0            -0               
+   297 aterrizaje_llegada[AV5,P4,S5]
+                                   0            -0               
+   298 aterrizaje_llegada[AV5,P4,S6]
+                                   5            -0               
+   299 aterrizaje_limite[AV1,P1,S1]
+                                   0            -0               
+   300 aterrizaje_limite[AV1,P1,S2]
+                                   0            -0               
+   301 aterrizaje_limite[AV1,P1,S3]
+                                   0            -0               
+   302 aterrizaje_limite[AV1,P1,S4]
+                                   0            -0               
+   303 aterrizaje_limite[AV1,P1,S5]
+                                   0            -0               
+   304 aterrizaje_limite[AV1,P1,S6]
+                                   0            -0               
+   305 aterrizaje_limite[AV1,P2,S1]
+                                   0            -0               
+   306 aterrizaje_limite[AV1,P2,S2]
+                                   0            -0               
+   307 aterrizaje_limite[AV1,P2,S3]
+                                   0            -0               
+   308 aterrizaje_limite[AV1,P2,S4]
+                                   0            -0               
+   309 aterrizaje_limite[AV1,P2,S5]
+                                   0            -0               
+   310 aterrizaje_limite[AV1,P2,S6]
+                                   0            -0               
+   311 aterrizaje_limite[AV1,P3,S1]
+                                   0            -0               
+   312 aterrizaje_limite[AV1,P3,S2]
+                                  60            -0               
+   313 aterrizaje_limite[AV1,P3,S3]
+                                   0            -0               
+   314 aterrizaje_limite[AV1,P3,S4]
+                                   0            -0               
+   315 aterrizaje_limite[AV1,P3,S5]
+                                   0            -0               
+   316 aterrizaje_limite[AV1,P3,S6]
+                                   0            -0               
+   317 aterrizaje_limite[AV1,P4,S1]
+                                   0            -0               
+   318 aterrizaje_limite[AV1,P4,S2]
+                                   0            -0               
+   319 aterrizaje_limite[AV1,P4,S3]
+                                   0            -0               
+   320 aterrizaje_limite[AV1,P4,S4]
+                                   0            -0               
+   321 aterrizaje_limite[AV1,P4,S5]
+                                   0            -0               
+   322 aterrizaje_limite[AV1,P4,S6]
+                                   0            -0               
+   323 aterrizaje_limite[AV2,P1,S1]
+                                   0            -0               
+   324 aterrizaje_limite[AV2,P1,S2]
+                                   0            -0               
+   325 aterrizaje_limite[AV2,P1,S3]
+                                   0            -0               
+   326 aterrizaje_limite[AV2,P1,S4]
+                                   0            -0               
+   327 aterrizaje_limite[AV2,P1,S5]
+                                   0            -0               
+   328 aterrizaje_limite[AV2,P1,S6]
+                                   0            -0               
+   329 aterrizaje_limite[AV2,P2,S1]
+                                   0            -0               
+   330 aterrizaje_limite[AV2,P2,S2]
+                                   0            -0               
+   331 aterrizaje_limite[AV2,P2,S3]
+                                   0            -0               
+   332 aterrizaje_limite[AV2,P2,S4]
+                                   0            -0               
+   333 aterrizaje_limite[AV2,P2,S5]
+                                   0            -0               
+   334 aterrizaje_limite[AV2,P2,S6]
+                                   0            -0               
+   335 aterrizaje_limite[AV2,P3,S1]
+                                   0            -0               
+   336 aterrizaje_limite[AV2,P3,S2]
+                                   0            -0               
+   337 aterrizaje_limite[AV2,P3,S3]
+                                   0            -0               
+   338 aterrizaje_limite[AV2,P3,S4]
+                                   0            -0               
+   339 aterrizaje_limite[AV2,P3,S5]
+                                   0            -0               
+   340 aterrizaje_limite[AV2,P3,S6]
+                                   0            -0               
+   341 aterrizaje_limite[AV2,P4,S1]
+                                  30            -0               
+   342 aterrizaje_limite[AV2,P4,S2]
+                                   0            -0               
+   343 aterrizaje_limite[AV2,P4,S3]
+                                   0            -0               
+   344 aterrizaje_limite[AV2,P4,S4]
+                                   0            -0               
+   345 aterrizaje_limite[AV2,P4,S5]
+                                   0            -0               
+   346 aterrizaje_limite[AV2,P4,S6]
+                                   0            -0               
+   347 aterrizaje_limite[AV3,P1,S1]
+                                   0            -0               
+   348 aterrizaje_limite[AV3,P1,S2]
+                                   0            -0               
+   349 aterrizaje_limite[AV3,P1,S3]
+                                   0            -0               
+   350 aterrizaje_limite[AV3,P1,S4]
+                                   0            -0               
+   351 aterrizaje_limite[AV3,P1,S5]
+                                   0            -0               
+   352 aterrizaje_limite[AV3,P1,S6]
+                                   0            -0               
+   353 aterrizaje_limite[AV3,P2,S1]
+                                   0            -0               
+   354 aterrizaje_limite[AV3,P2,S2]
+                                   0            -0               
+   355 aterrizaje_limite[AV3,P2,S3]
+                                   0            -0               
+   356 aterrizaje_limite[AV3,P2,S4]
+                                  15            -0               
+   357 aterrizaje_limite[AV3,P2,S5]
+                                   0            -0               
+   358 aterrizaje_limite[AV3,P2,S6]
+                                   0            -0               
+   359 aterrizaje_limite[AV3,P3,S1]
+                                   0            -0               
+   360 aterrizaje_limite[AV3,P3,S2]
+                                   0            -0               
+   361 aterrizaje_limite[AV3,P3,S3]
+                                   0            -0               
+   362 aterrizaje_limite[AV3,P3,S4]
+                                   0            -0               
+   363 aterrizaje_limite[AV3,P3,S5]
+                                   0            -0               
+   364 aterrizaje_limite[AV3,P3,S6]
+                                   0            -0               
+   365 aterrizaje_limite[AV3,P4,S1]
+                                   0            -0               
+   366 aterrizaje_limite[AV3,P4,S2]
+                                   0            -0               
+   367 aterrizaje_limite[AV3,P4,S3]
+                                   0            -0               
+   368 aterrizaje_limite[AV3,P4,S4]
+                                   0            -0               
+   369 aterrizaje_limite[AV3,P4,S5]
+                                   0            -0               
+   370 aterrizaje_limite[AV3,P4,S6]
+                                   0            -0               
+   371 aterrizaje_limite[AV4,P1,S1]
+                                   0            -0               
+   372 aterrizaje_limite[AV4,P1,S2]
+                                   0            -0               
+   373 aterrizaje_limite[AV4,P1,S3]
+                                   0            -0               
+   374 aterrizaje_limite[AV4,P1,S4]
+                                   0            -0               
+   375 aterrizaje_limite[AV4,P1,S5]
+                                  15            -0               
+   376 aterrizaje_limite[AV4,P1,S6]
+                                   0            -0               
+   377 aterrizaje_limite[AV4,P2,S1]
+                                   0            -0               
+   378 aterrizaje_limite[AV4,P2,S2]
+                                   0            -0               
+   379 aterrizaje_limite[AV4,P2,S3]
+                                   0            -0               
+   380 aterrizaje_limite[AV4,P2,S4]
+                                   0            -0               
+   381 aterrizaje_limite[AV4,P2,S5]
+                                   0            -0               
+   382 aterrizaje_limite[AV4,P2,S6]
+                                   0            -0               
+   383 aterrizaje_limite[AV4,P3,S1]
+                                   0            -0               
+   384 aterrizaje_limite[AV4,P3,S2]
+                                   0            -0               
+   385 aterrizaje_limite[AV4,P3,S3]
+                                   0            -0               
+   386 aterrizaje_limite[AV4,P3,S4]
+                                   0            -0               
+   387 aterrizaje_limite[AV4,P3,S5]
+                                   0            -0               
+   388 aterrizaje_limite[AV4,P3,S6]
+                                   0            -0               
+   389 aterrizaje_limite[AV4,P4,S1]
+                                   0            -0               
+   390 aterrizaje_limite[AV4,P4,S2]
+                                   0            -0               
+   391 aterrizaje_limite[AV4,P4,S3]
+                                   0            -0               
+   392 aterrizaje_limite[AV4,P4,S4]
+                                   0            -0               
+   393 aterrizaje_limite[AV4,P4,S5]
+                                   0            -0               
+   394 aterrizaje_limite[AV4,P4,S6]
+                                   0            -0               
+   395 aterrizaje_limite[AV5,P1,S1]
+                                   0            -0               
+   396 aterrizaje_limite[AV5,P1,S2]
+                                   0            -0               
+   397 aterrizaje_limite[AV5,P1,S3]
+                                   0            -0               
+   398 aterrizaje_limite[AV5,P1,S4]
+                                   0            -0               
+   399 aterrizaje_limite[AV5,P1,S5]
+                                   0            -0               
+   400 aterrizaje_limite[AV5,P1,S6]
+                                   0            -0               
+   401 aterrizaje_limite[AV5,P2,S1]
+                                   0            -0               
+   402 aterrizaje_limite[AV5,P2,S2]
+                                   0            -0               
+   403 aterrizaje_limite[AV5,P2,S3]
+                                   0            -0               
+   404 aterrizaje_limite[AV5,P2,S4]
+                                   0            -0               
+   405 aterrizaje_limite[AV5,P2,S5]
+                                   0            -0               
+   406 aterrizaje_limite[AV5,P2,S6]
+                                   0            -0               
+   407 aterrizaje_limite[AV5,P3,S1]
+                                   0            -0               
+   408 aterrizaje_limite[AV5,P3,S2]
+                                   0            -0               
+   409 aterrizaje_limite[AV5,P3,S3]
+                                   0            -0               
+   410 aterrizaje_limite[AV5,P3,S4]
+                                   0            -0               
+   411 aterrizaje_limite[AV5,P3,S5]
+                                   0            -0               
+   412 aterrizaje_limite[AV5,P3,S6]
+                                   0            -0               
+   413 aterrizaje_limite[AV5,P4,S1]
+                                   0            -0               
+   414 aterrizaje_limite[AV5,P4,S2]
+                                   0            -0               
+   415 aterrizaje_limite[AV5,P4,S3]
+                                   0            -0               
+   416 aterrizaje_limite[AV5,P4,S4]
+                                   0            -0               
+   417 aterrizaje_limite[AV5,P4,S5]
+                                   0            -0               
+   418 aterrizaje_limite[AV5,P4,S6]
+                                  15            -0               
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 billetes[estandar,AV1]
+                    *             18             0               
+     2 billetes[estandar,AV2]
+                    *             40             0               
+     3 billetes[estandar,AV3]
+                    *            160             0               
+     4 billetes[estandar,AV4]
+                    *             99             0               
+     5 billetes[estandar,AV5]
+                    *            133             0               
+     6 billetes[leisure,AV1]
+                    *             60             0               
+     7 billetes[leisure,AV2]
+                    *             27             0               
+     8 billetes[leisure,AV3]
+                    *             23             0               
+     9 billetes[leisure,AV4]
+                    *             22             0               
+    10 billetes[leisure,AV5]
+                    *             21             0               
+    11 billetes[business,AV1]
+                    *             12             0               
+    12 billetes[business,AV2]
+                    *             53             0               
+    13 billetes[business,AV3]
+                    *             17             0               
+    14 billetes[business,AV4]
+                    *             29             0               
+    15 billetes[business,AV5]
+                    *             36             0               
+    16 asignado[AV1,P1,S1]
+                    *              0             0             1 
+    17 asignado[AV1,P1,S2]
+                    *              0             0             1 
+    18 asignado[AV1,P1,S3]
+                    *              0             0             1 
+    19 asignado[AV1,P1,S4]
+                    *              0             0             1 
+    20 asignado[AV1,P1,S5]
+                    *              0             0             1 
+    21 asignado[AV1,P1,S6]
+                    *              0             0             1 
+    22 asignado[AV1,P2,S1]
+                    *              0             0             1 
+    23 asignado[AV1,P2,S2]
+                    *              0             0             1 
+    24 asignado[AV1,P2,S3]
+                    *              0             0             1 
+    25 asignado[AV1,P2,S4]
+                    *              0             0             1 
+    26 asignado[AV1,P2,S5]
+                    *              0             0             1 
+    27 asignado[AV1,P2,S6]
+                    *              0             0             1 
+    28 asignado[AV1,P3,S1]
+                    *              0             0             1 
+    29 asignado[AV1,P3,S2]
+                    *              1             0             1 
+    30 asignado[AV1,P3,S3]
+                    *              0             0             1 
+    31 asignado[AV1,P3,S4]
+                    *              0             0             1 
+    32 asignado[AV1,P3,S5]
+                    *              0             0             1 
+    33 asignado[AV1,P3,S6]
+                    *              0             0             1 
+    34 asignado[AV1,P4,S1]
+                    *              0             0             1 
+    35 asignado[AV1,P4,S2]
+                    *              0             0             1 
+    36 asignado[AV1,P4,S3]
+                    *              0             0             1 
+    37 asignado[AV1,P4,S4]
+                    *              0             0             1 
+    38 asignado[AV1,P4,S5]
+                    *              0             0             1 
+    39 asignado[AV1,P4,S6]
+                    *              0             0             1 
+    40 asignado[AV2,P1,S1]
+                    *              0             0             1 
+    41 asignado[AV2,P1,S2]
+                    *              0             0             1 
+    42 asignado[AV2,P1,S3]
+                    *              0             0             1 
+    43 asignado[AV2,P1,S4]
+                    *              0             0             1 
+    44 asignado[AV2,P1,S5]
+                    *              0             0             1 
+    45 asignado[AV2,P1,S6]
+                    *              0             0             1 
+    46 asignado[AV2,P2,S1]
+                    *              0             0             1 
+    47 asignado[AV2,P2,S2]
+                    *              0             0             1 
+    48 asignado[AV2,P2,S3]
+                    *              0             0             1 
+    49 asignado[AV2,P2,S4]
+                    *              0             0             1 
+    50 asignado[AV2,P2,S5]
+                    *              0             0             1 
+    51 asignado[AV2,P2,S6]
+                    *              0             0             1 
+    52 asignado[AV2,P3,S1]
+                    *              0             0             1 
+    53 asignado[AV2,P3,S2]
+                    *              0             0             1 
+    54 asignado[AV2,P3,S3]
+                    *              0             0             1 
+    55 asignado[AV2,P3,S4]
+                    *              0             0             1 
+    56 asignado[AV2,P3,S5]
+                    *              0             0             1 
+    57 asignado[AV2,P3,S6]
+                    *              0             0             1 
+    58 asignado[AV2,P4,S1]
+                    *              1             0             1 
+    59 asignado[AV2,P4,S2]
+                    *              0             0             1 
+    60 asignado[AV2,P4,S3]
+                    *              0             0             1 
+    61 asignado[AV2,P4,S4]
+                    *              0             0             1 
+    62 asignado[AV2,P4,S5]
+                    *              0             0             1 
+    63 asignado[AV2,P4,S6]
+                    *              0             0             1 
+    64 asignado[AV3,P1,S1]
+                    *              0             0             1 
+    65 asignado[AV3,P1,S2]
+                    *              0             0             1 
+    66 asignado[AV3,P1,S3]
+                    *              0             0             1 
+    67 asignado[AV3,P1,S4]
+                    *              0             0             1 
+    68 asignado[AV3,P1,S5]
+                    *              0             0             1 
+    69 asignado[AV3,P1,S6]
+                    *              0             0             1 
+    70 asignado[AV3,P2,S1]
+                    *              0             0             1 
+    71 asignado[AV3,P2,S2]
+                    *              0             0             1 
+    72 asignado[AV3,P2,S3]
+                    *              0             0             1 
+    73 asignado[AV3,P2,S4]
+                    *              1             0             1 
+    74 asignado[AV3,P2,S5]
+                    *              0             0             1 
+    75 asignado[AV3,P2,S6]
+                    *              0             0             1 
+    76 asignado[AV3,P3,S1]
+                    *              0             0             1 
+    77 asignado[AV3,P3,S2]
+                    *              0             0             1 
+    78 asignado[AV3,P3,S3]
+                    *              0             0             1 
+    79 asignado[AV3,P3,S4]
+                    *              0             0             1 
+    80 asignado[AV3,P3,S5]
+                    *              0             0             1 
+    81 asignado[AV3,P3,S6]
+                    *              0             0             1 
+    82 asignado[AV3,P4,S1]
+                    *              0             0             1 
+    83 asignado[AV3,P4,S2]
+                    *              0             0             1 
+    84 asignado[AV3,P4,S3]
+                    *              0             0             1 
+    85 asignado[AV3,P4,S4]
+                    *              0             0             1 
+    86 asignado[AV3,P4,S5]
+                    *              0             0             1 
+    87 asignado[AV3,P4,S6]
+                    *              0             0             1 
+    88 asignado[AV4,P1,S1]
+                    *              0             0             1 
+    89 asignado[AV4,P1,S2]
+                    *              0             0             1 
+    90 asignado[AV4,P1,S3]
+                    *              0             0             1 
+    91 asignado[AV4,P1,S4]
+                    *              0             0             1 
+    92 asignado[AV4,P1,S5]
+                    *              1             0             1 
+    93 asignado[AV4,P1,S6]
+                    *              0             0             1 
+    94 asignado[AV4,P2,S1]
+                    *              0             0             1 
+    95 asignado[AV4,P2,S2]
+                    *              0             0             1 
+    96 asignado[AV4,P2,S3]
+                    *              0             0             1 
+    97 asignado[AV4,P2,S4]
+                    *              0             0             1 
+    98 asignado[AV4,P2,S5]
+                    *              0             0             1 
+    99 asignado[AV4,P2,S6]
+                    *              0             0             1 
+   100 asignado[AV4,P3,S1]
+                    *              0             0             1 
+   101 asignado[AV4,P3,S2]
+                    *              0             0             1 
+   102 asignado[AV4,P3,S3]
+                    *              0             0             1 
+   103 asignado[AV4,P3,S4]
+                    *              0             0             1 
+   104 asignado[AV4,P3,S5]
+                    *              0             0             1 
+   105 asignado[AV4,P3,S6]
+                    *              0             0             1 
+   106 asignado[AV4,P4,S1]
+                    *              0             0             1 
+   107 asignado[AV4,P4,S2]
+                    *              0             0             1 
+   108 asignado[AV4,P4,S3]
+                    *              0             0             1 
+   109 asignado[AV4,P4,S4]
+                    *              0             0             1 
+   110 asignado[AV4,P4,S5]
+                    *              0             0             1 
+   111 asignado[AV4,P4,S6]
+                    *              0             0             1 
+   112 asignado[AV5,P1,S1]
+                    *              0             0             1 
+   113 asignado[AV5,P1,S2]
+                    *              0             0             1 
+   114 asignado[AV5,P1,S3]
+                    *              0             0             1 
+   115 asignado[AV5,P1,S4]
+                    *              0             0             1 
+   116 asignado[AV5,P1,S5]
+                    *              0             0             1 
+   117 asignado[AV5,P1,S6]
+                    *              0             0             1 
+   118 asignado[AV5,P2,S1]
+                    *              0             0             1 
+   119 asignado[AV5,P2,S2]
+                    *              0             0             1 
+   120 asignado[AV5,P2,S3]
+                    *              0             0             1 
+   121 asignado[AV5,P2,S4]
+                    *              0             0             1 
+   122 asignado[AV5,P2,S5]
+                    *              0             0             1 
+   123 asignado[AV5,P2,S6]
+                    *              0             0             1 
+   124 asignado[AV5,P3,S1]
+                    *              0             0             1 
+   125 asignado[AV5,P3,S2]
+                    *              0             0             1 
+   126 asignado[AV5,P3,S3]
+                    *              0             0             1 
+   127 asignado[AV5,P3,S4]
+                    *              0             0             1 
+   128 asignado[AV5,P3,S5]
+                    *              0             0             1 
+   129 asignado[AV5,P3,S6]
+                    *              0             0             1 
+   130 asignado[AV5,P4,S1]
+                    *              0             0             1 
+   131 asignado[AV5,P4,S2]
+                    *              0             0             1 
+   132 asignado[AV5,P4,S3]
+                    *              0             0             1 
+   133 asignado[AV5,P4,S4]
+                    *              0             0             1 
+   134 asignado[AV5,P4,S5]
+                    *              0             0             1 
+   135 asignado[AV5,P4,S6]
+                    *              1             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

@@ -1,0 +1,41 @@
+data;
+
+set Tarifas:= estandar leisure business;
+set Aviones:= AV1 AV2 AV3 AV4 AV5;
+
+param precio_tarifa:=
+estandar 19
+leisure 49
+business 69;
+
+param equipaje_tarifa:=
+estandar 1
+leisure 20
+business 40;
+
+param asientos_avion:=
+AV1 90
+AV2 120
+AV3 200
+AV4 150
+AV5 190;
+
+param capacidad_avion:=
+AV1 1700
+AV2 2700
+AV3 1300
+AV4 1700
+AV5 2000;
+
+param min_tarifaPorAvion:=
+estandar 0
+leisure 20
+business 10;
+
+param min_tarifaPercent:=
+estandar 0.6
+leisure 0
+business 0;
+
+
+end;

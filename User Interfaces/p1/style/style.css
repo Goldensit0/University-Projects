@@ -1,0 +1,980 @@
+/* formato de los distintos bloques de texto*/
+* {
+    padding: 0;
+    margin: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+img {
+    width: 10vw;
+    height: auto;
+}
+p {
+    color: rgb(70, 21, 21);
+    font-family: Arial;
+}
+
+h1 {    
+    color: rgb(187, 21, 21);
+    font-weight: bold;
+    font-family: Arial;
+    text-align: center;
+    font-size: 10vh;
+    padding: 10px;
+}
+
+h2 {    
+    color: rgb(187, 21, 21);
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 45px;
+}
+
+h3 {
+    color: rgb(143, 85, 85);
+    font-style: italic;
+    font-family: Arial;
+    text-align: center;
+    font-size: 45px;
+}
+
+/*cursor personalizado*/
+body{
+  cursor: url('../squidward_santa_1375_chiki.png'), auto;
+}
+a{
+  cursor: url('../handsome_cursor.png'), auto;
+}
+button{
+  cursor: url('../handsome_cursor.png'), auto;
+}
+
+/*vamos a importar una fuente "navideña" para home*/
+@font-face {
+  font-family: "xmas";
+  src: url("../xmas.ttf");
+}
+
+/* Header de navegacion */
+.barra{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgb(195, 34, 34);
+}
+
+.navegacion {
+    display: flex;
+    list-style: none;
+}
+
+ul.navegacion > li {
+  line-height: 10vh;
+  padding: 5px;
+  text-align: center;
+}
+
+ul.navegacion > li:hover {
+  background-color: rgb(128, 0, 0);
+}
+
+li > a {
+  padding: 10px;
+  top: 5px;
+  color: rgb(255, 214, 214);
+  text-decoration: none;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+li > button {
+  display: inline-block;
+  padding: 20px;
+  margin: 0vh;
+  color: #fff;
+  background-color: rgb(199, 38, 38);
+  border-radius: 2vh;
+  cursor: url('../handsome_cursor.png'), auto;
+
+}
+
+li > button:hover {
+  background-color: rgb(255, 112, 112);
+}
+
+#logo{
+    height: 8vh;
+    width: auto;
+    padding: 10px;
+    filter: invert(90%);
+}
+
+/*Sección inicial*/
+#Home {
+    display:flex;
+    flex-direction: column;
+    /*background-color: rgb(255, 214, 214);*/
+    background-image: url("../images/fondo_navidad.jpg");
+    padding-top: 30vh;
+    padding-bottom: 30vh;
+}
+
+#Home > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+#Home > h1{
+  color: rgb(255, 239, 239);
+  font-family: xmas;
+  font-size: 20vh;
+  text-shadow: 1px 1px 2px black;
+  padding-bottom: 5vh;
+}
+
+#Home > h3{
+  color: rgb(214, 187, 187);
+  font-family: xmas;
+  font-size: 10vh;
+  text-shadow: 1px 1px 2px black;
+  padding-top: 3vh;
+  padding-bottom: 2vh;
+}
+
+
+
+/*boton inicial*/
+
+.boton_inicial{
+    text-align: center;
+}
+
+.empezar{
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(195, 34, 34);
+    border: 2px solid #7f0808;
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+    display: inline-block;
+    transition: all 0.5s;
+    cursor:url('../handsome_cursor.png'), auto;
+    margin: 5px;
+    /*ancho*/
+    padding: 10px;
+    /*largo*/
+    width: 125px;
+}
+
+.empezar span {
+    cursor:url('../handsome_cursor.png'), auto;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .empezar span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+.empezar:hover span {
+    padding-right: 25px;
+  }
+
+  .empezar:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+/* ----------------------SECCIÓN "Quién es Papá Noel"----------------------*/
+
+/*dos secciones, la segunda con dos columnas*/
+
+#PapaNoel {
+    height: 100vh;
+    background-color: rgb(180, 0, 0);
+}
+
+#PapaNoel > h1 {
+    color: rgb(255, 229, 229);
+    font-size: 10vh;
+    font-family: xmas;
+    text-shadow: 1px 1px 2px black;
+}
+/* contenedor general para toda esta sección*/
+.dos_columnas {
+  display: grid;
+  grid-template-columns: auto auto; /* dos columnas */
+  padding: 2vw; /*padding general*/
+  gap: 10vh;
+  height: 90vh;
+}
+
+.c1 {
+  grid-column: 1; 
+}
+
+.foto_noel{
+  height: 80vh;
+  width: auto;
+  border-radius: 15px;
+  margin-left: 10px
+}
+
+.c2 {
+  grid-column: 2;
+}
+
+.c2 > * {
+  color: rgb(255, 229, 229);
+}
+
+.c2 > h2 {
+  text-align: center;
+  margin-bottom: 5vh;
+  }
+
+.c2 > p {
+  text-align: justify;
+    font-size:2vw;
+  }
+
+/* ----------------------SECCIÓN "Las Cartas"----------------------*/
+
+#Cartas{
+  background-color:rgb(79, 163, 79);
+}
+
+#Cartas > h1{
+  color:rgb(22, 59, 22);
+  font-family: xmas;
+  text-shadow: 1px 1px 2px black;
+}
+
+.item-matriz h2{
+  color:rgb(22, 59, 22);
+}
+
+.item-matriz h3{
+  color:rgb(16, 44, 16);
+  text-align: left;
+  padding-bottom: 10px;
+  font-size: 1.8vw;
+}
+
+.item-matriz p{
+  color: rgb(22, 59, 22);
+  font-size: 1.3vw;
+  font-style: italic;
+}
+
+.matriz_cartas{
+    display: grid;
+    padding: 1vh;
+    padding-top: 2.5vh;
+    gap: 2.5vh;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    /*border-radius: 15px;*/
+}
+
+.item-matriz{
+  /*background-color:*/
+  padding: 15px;
+  font-size: 30px;
+  background-color: rgb(161, 208, 161);
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0.3vh 0.3vh 1vh;
+}
+
+.foto_carta{
+  width: 24vh;
+  height: 24vh;
+  border-radius: 30px;
+  float: left;
+  margin-right: 10px;
+}
+ 
+
+/* ----------------------SECCIÓN "Enviar Carta"----------------------*/
+
+#EnviarCarta{
+  background-color: rgb(192, 130, 49);
+}
+
+#EnviarCarta > h1{
+  color:white;
+  font-family: xmas;
+  text-shadow: 1px 1px 2px black;
+}
+
+.matriz_formulario form{
+  display:grid;
+  gap: 5vh;
+  padding: 5vh;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 5vh;
+}
+
+label{
+  color: white;
+}
+
+.items_matriz_formulario{
+  /*background-color: rgba(255, 255, 255, 0.8);*/
+  
+  padding: 1vh;
+  border-radius: 2vh;
+  font-size: 5vh;
+  text-align: center;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.nombre{
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.email{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.ciudad{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.pais{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.carta{
+  grid-column: 1 /span 2;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column; /* para que salga "carta" encima de la cajita*/
+}
+
+textarea {
+  width: 50vw;                
+  height: 30vh;          
+  align-self: center;
+  /*style="width: 150vh; height: 30vh;" */
+}
+
+.boton_s4_div{
+  text-align: center;
+  grid-column: 1 /span 2;
+  grid-row: 4;
+}
+
+/* mismo formato a "enviar", con la animación de la flechita*/
+.boton_s4{
+  display: inline-block;
+  padding: 3vh;
+  font-size: 2vh;
+  cursor:url('../handsome_cursor.png'), auto;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(153, 87, 0);
+  border-radius: 3vh;
+  box-shadow: 0 1vh rgb(107, 61, 0);
+  font-weight: bold;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  margin-bottom: 1vh;
+}
+
+.boton_s4:hover {
+  background-color: rgb(131, 74, 0);
+}
+
+.boton_s4:active {
+  background-color: rgb(88, 62, 28);
+  box-shadow: 0 0.6vh rgb(73, 55, 30);
+  transform: translateY(4px);
+}
+
+
+/* ----------------------SECCIÓN "Juego"----------------------*/
+
+#Juego {
+  height: 100vh;
+  background-color: rgb(102, 171, 235);
+}
+
+#Juego > h1 {
+  color: rgb(0, 91, 165);
+  font-size: 10vh;
+  font-family: xmas;
+  text-shadow: 1px 1px 2px black;
+}
+
+/*
+li > button {
+  display: inline-block;
+  padding: 2vh;
+  margin: 0vh;
+  color: #fff;
+  background-color: rgb(199, 38, 38);
+  border-radius: 2vh;
+  cursor:url('../handsome_cursor.png'), auto;
+
+}
+
+li > button:hover {
+  background-color: rgb(255, 112, 112);
+}
+  */
+
+.dos_columnas_2{
+  display: grid;
+  grid-template-columns: 10vw 88vw;
+  height: 90vh;
+  text-align: center;
+}
+
+.col_botones{
+  grid-column: 1;
+  padding: 2vw;
+}
+
+.col_botones > a{
+  list-style: none;
+  font-family: arial;
+  font-weight:bold;
+  text-decoration: none;
+  border-radius: 2vh;
+}
+
+.botoncito{
+  height: 10h;
+  width:8vw;
+  font-size: 2vw;
+  display: inline-block;
+  padding: 2vh;
+  color: #fff;
+  background-color: rgb(199, 38, 38);
+  cursor:url("../handsome_cursor.png"), auto;
+  margin: 3vh;
+  border: 2px solid black;
+}
+
+.botoncito:hover {
+  background-color: rgb(255, 112, 112);
+}
+
+.col_juegos{
+  grid-column: 2;
+  padding: 2vw;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  justify-items: center;
+  align-items: center;
+}
+
+.imagen_juego {
+  display: none;
+  margin-left: 10vw;
+}
+
+.imagen_juego:target{
+  display: block;
+  position: relative;
+  height: 70vh;
+  width: 120vh;
+  max-width: 70vw;
+  object-fit: cover;
+}
+
+/* ---------------------- FOOTER ----------------------*/
+
+.footer{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: rgb(129, 17, 17);
+}
+
+.redes {
+  display: flex;
+  list-style: none;
+}
+
+.logo_footer{
+  filter: invert(100%);
+  height: 8vh;
+  width: auto;
+  padding: 10px;
+}
+
+.enlaces_utiles {
+  display: flex;
+  padding-top: 10px;
+  list-style: inside;
+  color: rgb(249, 232, 232);
+  flex-direction: column;
+}
+
+#enlaces_h {
+  font-family: Arial;
+  list-style: none;
+  font-weight: bold;
+  font-size: 2.5vh;
+  color: rgb(255, 214, 214);
+}
+
+.enlaces_utiles a {
+  font-size: 2vh;
+  color: rgb(247, 237, 237);
+}
+
+.logo_y_copy{
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo_y_copy > p{
+  color: rgb(255, 214, 214);
+  padding-right: 1vh;
+}
+
+/*-------------------------- BREAKPOINTS PARA QUE SEA RESPONSIVE --------------------------*/
+
+@media (max-width: 768px){ /*formato tablet*/
+  /*mas o menos todos los cambios son 2/3 tamaño original*/
+
+  /*valores "base"*/
+  img {
+    width: 6vw;
+    height: auto;
+  }
+
+  h1 {    
+      font-size: 6vh;
+      padding: 6px;
+  }
+
+  h2 {    
+      font-size: 15px;
+  }
+
+  h3 {
+      font-size: 15px;
+  }
+
+  /*ajustamos header*/
+  ul.navegacion > li {
+    line-height: 6vh;
+    padding: 3px;
+  }
+  
+  li > a {
+    padding: 6px;
+    top: 3px;
+    font-size: 12px;
+  }
+  
+  li > button {
+    padding: 12px;
+    margin: 0vh;
+    border-radius: 1.5vh;
+  }
+  
+  #logo{
+      height: 5vh;
+      padding: 4px;      
+  }
+
+  /*ajustamos seccion inicial*/
+  #Home {
+    padding-top: 37vh;
+    padding-bottom: 37vh;
+  }
+
+  #Home > * {
+      height: 6vh;
+  }
+
+  #Home > h1{
+    font-size: 10vh;
+    padding-bottom: 3vh;
+  }
+
+  #Home > h3{
+    font-size: 6vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+
+  /* SECCIÓN 1*/
+  /* cambiamos un poco la distribución, que sea la foto y el texto debajo*/
+  
+  #PapaNoel {
+    height: 110vh; /* doblo para poner una cosa debajo de la otra*/
+    padding: 2vw;
+  }
+
+  #PapaNoel > h1 {
+      font-size: 6vh;
+  }
+
+  .dos_columnas {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+  }
+  
+  .c1 {
+    text-align: center; /*centro la foto*/
+  }
+
+  .foto_noel{ /*un poco más pequeña*/
+    height: 50vh;
+    width: auto;
+    border-radius: 15px;
+    margin-left: 10px;
+  }
+
+  .c2 {
+    padding-top: 2vh;
+  }
+
+  .c2 > h2 {
+    /*text-align: center;*/
+    font-size: 4vh;
+    }
+
+  .c2 > p {
+    text-align: justify;
+    font-size:2.5vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    }
+
+    /*SECCIÓN 2 MATRIZ CARTAS*/
+    /* LO CAMBIAREMOS A MATRIZ 3X2*/
+    .item-matriz h3{
+      padding-bottom: 6px;
+      font-size: 2.5vh;
+    }
+    
+    .item-matriz p{
+      font-size: 2.5vh;
+    }
+    
+    .matriz_cartas{
+        display: grid;
+        padding: 0.66vh;
+        padding-top: 2vh;
+        gap: 2vh;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+    }
+    
+    .item-matriz{
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 20px;
+      box-shadow: 0.2vh 0.2vh 0.6vh;
+    }
+    
+    .foto_carta{
+      width: 8vh;
+      height: 8vh;
+      border-radius: 20px;
+      margin-right: 6px;
+    }
+     
+    /*SECCION 3 ENVIAR CARTAS*/
+    /*se queda igual, la cambiamos en 600px*/
+
+    /*SECCIÓN 4 JUEGA*/
+    /*idea: poner los tres botones arriba y la foto debajo*/
+
+    .dos_columnas_2{
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    
+    .col_botones{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .botoncito{
+      width: 30vw;
+      height: 5vh;
+      font-size: 2.5vw;
+      border: 1px solid black;
+    }
+
+    .col_juegos{
+      padding: 2vw;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      align-self: center;
+    }
+
+    .imagen_juego {
+      margin-left: 0vh;
+    }
+    .imagen_juego:target{
+      height: 50vh;
+      width: 70vh;
+    }
+
+    /*FOOTER*/
+    .redes{
+      text-align: center;
+      align-items: center;
+    }
+    .logo_footer{
+      height: 5vh;
+      padding: 6px;
+    }
+    .enlaces_utiles {
+      padding-top: 6px;
+    }
+    #enlaces_h {
+      font-size: 2vh;
+    }
+    
+    .enlaces_utiles a {
+      font-size: 1.5vh;
+    }
+    .logo_y_copy > p{
+      padding-right: 0.6vh;
+      font-size: 2vh;
+    }
+  }
+
+/*-----------------------------600PX----------------------*/
+
+  @media (max-width: 600px){ /*formato móvil.*/
+    /*mas o menos todos los cambios son 1/3 tamaño original*/
+  
+    /*va ser prácticamente idéntico a 768px*/
+
+    /*valores "base"*/
+    img {
+      width: 3vw;
+      height: auto;
+    }
+  
+    h1 {    
+        font-size: 3vh;
+        padding: 3px;
+    }
+  
+    h2 {    
+        font-size: 10px;
+    }
+  
+    h3 {
+        font-size: 10px;
+    }
+  
+    /*ajustamos header*/
+    ul.navegacion > li {
+      line-height: 5vh;
+      padding: 1.5px;
+    }
+    
+    li > a {
+      padding: 3px;
+      top: 1.5px;
+      font-size: 9px;
+    }
+    
+    li > button {
+      padding: 9px;
+      margin: 0vh;
+      border-radius: 1.2vh;
+    }
+    
+    #logo{
+        height: 5vh;
+        padding: 2px;      
+    }
+  
+    /*ajustamos seccion inicial*/
+    #Home {
+      padding-top: 42vh;
+      padding-bottom: 42vh;
+    }
+  
+    #Home > * {
+        height: 3vh;
+    }
+  
+    #Home > h1{
+      font-size: 8vh;
+      padding-bottom: 2vh;
+    }
+  
+    #Home > h3{
+      font-size: 5vh;
+      padding-top: 2vh;
+      padding-bottom: 4vh;
+    }
+  
+    /* SECCIÓN 1*/
+    
+    #PapaNoel {
+      height: 120vh; /*reajustamos tamaño, el resto igual*/
+    }
+
+   
+    /*SECCIÓN 2 MATRIZ CARTAS*/
+    /*saldrán una detrás de la otra*/
+
+    #Cartas > h1{
+      font-size: 6vh;
+    }
+
+    .item-matriz h3{
+      padding-bottom: 6px;
+      font-size: 2.5vh;
+    }
+    .item-matriz p{
+      font-size: 2.5vh;
+    }
+    
+    .matriz_cartas{
+        display: flex;
+        flex-direction: column;
+        padding: 0.66vh;
+        padding-top: 2vh;
+        gap: 2vh;
+    }
+    
+    .item-matriz{
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 20px;
+      box-shadow: 0.2vh 0.2vh 0.6vh;
+    }
+    
+    .foto_carta{
+      width: 8vh;
+      height: 8vh;
+      border-radius: 35px;
+      margin-right: 6px;
+    }
+      
+    /*SECCION 3 ENVIAR CARTAS*/
+    /*todos los elementos uno debajo del otro*/
+    
+    #EnviarCarta > h1{
+      font-size: 6vh;
+    }
+    label{
+      font-size: 3vh;
+    }
+    
+    .matriz_formulario form{
+      display:flex;
+      flex-direction: column;
+      gap: 5vh;
+      padding: 5vh;
+    }
+
+    textarea {
+      width: 50vw;                
+      height: 20vh;          
+    }
+
+    .boton_s4_div{
+      text-align: center;
+      grid-column: 1;
+      grid-row: 6;
+    }
+
+    /*SECCIÓN 4 JUEGA*/
+    /*idea: poner los tres botones arriba y la foto debajo*/
+    
+    .dos_columnas_2{
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    
+    .col_botones{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .botoncito{
+      width: 30vw;
+      height: 3vh;
+      font-size: 2vw;
+      border: 0.5px solid black;
+    }
+
+    .col_juegos{
+      padding: 2vw;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      align-self: center;
+    }
+
+    .imagen_juego {
+      margin-left: 0vh;
+    }
+
+    .imagen_juego:target{
+      height: 40vh;
+      width: 60vh;
+    }
+
+    /*FOOTER*/
+    .redes{
+      text-align: center;
+      align-items: center;
+    }
+    .logo_footer{
+      height: 4vh;
+      padding: 3px;
+    }
+    .enlaces_utiles {
+      padding-top: 3px;
+    }
+    #enlaces_h {
+      font-size: 1.5vh;
+    }
+    .enlaces_utiles a {
+      font-size: 1.2vh;
+    }
+    .logo_y_copy > p{
+      padding-right: 0.3vh;
+      font-size: 1.5vh;
+    }
+  }

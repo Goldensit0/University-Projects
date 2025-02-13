@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="style/style-registrarse.css" rel="stylesheet">
+    <script src="script/registrarse.js" async></script>
+    <script src="script/actualizar_main.js" async></script>
+</head>
+
+<body class="registro">
+    <section>
+        <h1>Registro</h1>
+        <form id="formulario_registro">
+            <label for="nombre_usuario_new">Usuario:</label>
+            <input type="text" id="nombre_usuario_new" required>
+            
+            <label for="password_new">Contraseña:</label>
+            <input type="password" id="password_new" required>
+
+            <label for="password_repe">Repetir contraseña:</label>
+            <input type="password" id="password_repe" required>
+            
+            <label for="correo_new">Correo:</label>
+            <input type="text" id="correo_new" required pattern = ^[^@]+@[^@]+\.[a-zA-Z]{2,}$ title="El correo debe ser formato usuario@dominio.com">
+            <!--Validación del formato del correo directamente implementada-->
+        
+            <label for="ciudad_new">Ciudad:</label>
+            <input type="text" id="ciudad_new" required>
+                
+            <label for="pais_new">País:</label>
+            <input type="text" id="pais_new" required>
+
+            <label for="genero_new">Género:</label>
+            <select id="genero_new">
+                <option>Masculino</option>
+                <option>Femenino</option>
+                <option>Otro</option>
+                <option>Prefiero no decirlo</option>
+            </select>
+              
+            <label for="hijos_new">¿Cuántos hijos/hijas tienes?</label>
+            <input type="number" id="hijos_new" min="0" required>
+            
+            <!-- En este div agregamos más formulario según el num de hijos-->
+            <div id="datos_hijos"></div>
+            
+            <div id="tres_botoncitos">
+                <button id="crear_usuario" type="submit">Aceptar</button>
+                <button id="cancelar_crear_usuario" type="button">Cancelar</button>
+                <button id="limpiar_formulario" type="button">Limpiar</button>
+            </div>
+        </form>
+    </section>
+</body>
+

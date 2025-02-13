@@ -1,0 +1,92 @@
+/*importamos la fuente personalizada*/
+@font-face {
+    font-family: 'xmas';
+    src: url("../images/Home_Christmas_1_.woff") format('woff');
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* Fondo oscuro para el popup */
+.popup_mis_cartas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /*overflow: scroll;*/
+}
+.contenedor-miscartas{
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 90%;
+    background-size: cover;
+    margin-left:3vw;
+    margin-right:3vw;
+    margin-bottom:3vh;
+    margin-top:2vh;
+
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap:0.5vw;
+
+    min-height: 80vh;
+    height: fit-content;
+    width: 93vw;
+}
+
+.contenedor-miscartas-caja{
+    margin:2vh 2vw;
+    background-color: rgba(165, 166, 217, 0.85);
+    border-radius: 3vh;
+    height: 90%;
+}
+
+.contenedor-miscartas-caja-texto{
+    font-family: "DejaVu Sans", serif;
+    font-size: 1.1vw;
+}
+
+.contenedor-miscartas-caja-texto p{
+    padding: 5%;
+}
+
+.contenedor-miscartas-caja-texto h3{
+    padding-top: 8%;
+    padding-left: 8%;
+    color: #1b1b28;
+
+}
+
+#contenedor-mis-cartas h1{
+    font-family: "DejaVu Sans", serif;
+    color:#1b1b28;
+    margin: 2vh;
+    font-size: 3vh;
+
+}
+
+#contenedor-mis-cartas p{
+    color: #1b1b28;
+    margin: 2vh;
+    font-size: 2.5vh;
+    
+}
+
+.salir_cartas{
+    background-color: #701b0b;
+    border-radius: 2vh;
+    color: white;
+    font-family: xmas;
+    font-size: 4vh;
+    padding: 1vh;
+    margin: 2vh;
+}
+
+.salir_cartas:hover{
+    background-color: #411106;
+}

@@ -1,0 +1,77 @@
+data;
+
+set Tarifas:= estandar leisure business;
+set Aviones:= AV1 AV2 AV3 AV4 AV5;
+set Pistas:= P1 P2 P3 P4;
+set Slots:= S1 S2 S3 S4 S5 S6;
+
+param precio_tarifa:=
+estandar 19
+leisure 49
+business 69;
+
+param equipaje_tarifa:=
+estandar 1
+leisure 20
+business 40;
+
+param asientos_avion:=
+AV1 90
+AV2 120
+AV3 200
+AV4 150
+AV5 190;
+
+param capacidad_avion:=
+AV1 1700
+AV2 2700
+AV3 1300
+AV4 1700
+AV5 2000;
+
+param min_tarifaPorAvion:=
+estandar 0
+leisure 20
+business 10;
+
+param min_tarifaPercent:=
+estandar 0.6
+leisure 0
+business 0;
+
+param disponibilidad: S1 S2 S3 S4 S5 S6 :=
+                    P1 0 0 0 0 1 1
+                    P2 0 0 1 1 0 0
+                    P3 1 1 1 0 0 1
+                    P4 1 0 0 0 1 1;
+
+param minutosSlot:=
+S1 0
+S2 15
+S3 30
+S4 45
+S5 60
+S6 75;
+
+param minAterrizaje:=
+AV1 10
+AV2 -5
+AV3 40
+AV4 55
+AV5 70;
+
+param maxAterrizaje:=
+AV1 75
+AV2 30
+AV3 60
+AV4 75
+AV5 90;
+
+param costeRetraso:=
+AV1 100
+AV2 200
+AV3 150
+AV4 250
+AV5 200;
+
+end;

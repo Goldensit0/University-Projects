@@ -1,0 +1,32 @@
+[
+    {
+        "idcard": "02166140T",
+        "name_surname": "jose lopez",
+        "credit_card": "6532133452789111",
+        "phone_number:": "666666666",
+        "arrival_date": "01/06/2023",
+        "num_days": "4",
+        "room_type": "suite",
+        "localizer": "5f07422a1f017951169d1b21b745e6a1"
+    },
+    {
+        "idcard": "26867719Q",
+        "name_surname": "jose lopez",
+        "credit_card": "6532133452789111",
+        "phone_number:": "666666666",
+        "arrival_date": "01/06/2023",
+        "num_days": "4",
+        "room_type": "suite",
+        "localizer": "330877aa47b5c448e0940039d3e7c4ce"
+    },
+    {
+        "idcard": "61253812M",
+        "name_surname": "jose lopez",
+        "credit_card": "6532133452789111",
+        "phone_number:": "666666666",
+        "arrival_date": "01/06/2023",
+        "num_days": "4",
+        "room_type": "suite",
+        "localizer": "76657858ed76cf0e12d97c387f45571f"
+    }
+]

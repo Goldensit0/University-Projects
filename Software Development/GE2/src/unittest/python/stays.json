@@ -1,0 +1,23 @@
+[
+    {
+        "localizer": "330877aa47b5c448e0940039d3e7c4ce",
+        "idcard": "26867719Q",
+        "arrival": "01/06/2023",
+        "departure": "05/06/2023",
+        "room_key": "6d80bcfd50e1e93e36e86838e54144b0dd686a1524fd26e3ae956e0fc0b858a5"
+    },
+    {
+        "localizer": "76657858ed76cf0e12d97c387f45571f",
+        "idcard": "61253812M",
+        "arrival": "01/06/2023",
+        "departure": "05/06/2023",
+        "room_key": "b3d6ba28541c9f7a38ba0829dac8ef4ce2208f39697a275ab1d4d89494bcf7ec"
+    },
+    {
+        "localizer": "5f07422a1f017951169d1b21b745e6a1",
+        "idcard": "02166140T",
+        "arrival": "01/06/2023",
+        "departure": "05/06/2023",
+        "room_key": "ee389f4b9bf3494f6ca577b6e5b4a031d348e940ecb44cd8e3b468a97e20466a"
+    }
+]

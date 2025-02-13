@@ -1,0 +1,1821 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: rgba(65, 98, 82, 0.9) rgba(169, 170, 206, 0.4);
+}
+
+/*Ajustes generales de todas las páginas*/
+.pagina{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    scroll-margin-top: 10vh;
+    padding-top: 1vh;
+}
+
+/*Ajustes generales para todos los títulos*/
+.titulo{
+    font-family: "DejaVu Sans", serif;
+    font-size: 2.5vw;
+    font-weight: normal;
+
+}
+
+/*cursor personalizado*/
+body{
+    cursor: url('./cursor/gnome_normal32.png'), auto;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  }
+a{
+    cursor: url('./cursor/gnome_click32.png'), auto;
+  }
+  button{
+    cursor: url('./cursor/gnome_click32.png'), auto;
+  }
+
+/*AJUSTES DE LA BARRA DE NAVEGACIÓN -----------------------------------------------------------------*/
+/*Barra de navegación*/
+.navegacion{
+    /*overflow-x: hidden;*/
+    background-color: rgba(65, 98, 82, 0.9);
+    padding:0;
+    margin:0;
+    list-style-type: none;
+    display:inline-flex;
+    overflow-clip-margin: 20vh;
+    top:0;
+    width:100%;
+    position:fixed !important;
+    z-index: 1;
+
+}
+
+
+/*Enlaces de la barra de navegación*/
+.navegacion a{
+    display: inline-flex;
+    color: #F9F1ED;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3vw;
+    padding: 1.5vw 2vw;
+    float: right;
+
+}
+
+#cesta {
+    display: inline-flex;
+    height: 8.5vh;
+    width: 8.5vh;
+    background-image: url("../images/cesta.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    padding-right: 2vh;
+    background-color: transparent;
+    border:none;
+    float: right;
+    margin-right: 2vh;
+}
+
+.ribbon {
+    width: 2.1vh;
+    font-size: 2vh;
+    padding: 0.5vh;
+    position: absolute;
+    right: 5vw;
+    text-align: center;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+}
+
+
+#logoNav {
+    /*Para que quede mejor le quitamos el margen al logo*/
+    padding: 1vh;
+    padding-left: 2vh;
+    float: left;
+}
+
+.navegacion li {
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
+.logoNavegacion{
+    height: 9vh;
+    width: auto;
+    filter: invert();
+}
+
+
+
+/*
+.user{
+    height: 3vh;
+    display: block;
+    align-content: center;
+    filter: invert();
+
+}*/
+
+#icono_usuario{
+    height: 8.5vh;
+    width: 8.5vh;
+    border-radius: 50%;
+    /*margin-top: 1vh;*/
+    border:none;
+    margin-right: 1.5vh;
+    margin-left: 2vh;
+
+    /*NUEVO DE PONER DESPLEGABLE------------------------------*/
+    position: relative; /* Necesario para posicionar el menú */
+}
+
+#icono_usuario:hover{
+    background-color: #222e2a;
+}
+
+/*la imagen cambia dependiendo de si hemos iniciado sesión o no*/
+.icono_invitado{
+    background-image: url("../images/user_.png");
+    background-color: rgba(65, 98, 82, 0.9);
+    background-size: cover;
+    background-position: center;
+}
+
+.icono_sesion_iniciada{
+    background-image: url("../images/user_gato.jpg");
+    background-color: none;
+    background-size: 180%;
+    background-position-y: 30%;
+    background-position-x:45%;
+    border: white;
+}
+
+/*CAMBIOS PARA QUE SALGA COMO DESPLEGABLE*/
+
+#desplegable_usuario{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 1%;
+    padding: 1vh;
+    background-color: rgba(65, 98, 82, 0.705);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 150px;
+    z-index: 1000;
+    
+}
+
+#desplegable_usuario > button{
+    display: block;
+    width: 100%;
+    border: none;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    background-color:  #30423db7;
+    border-radius: 1vh;
+    color:  white;
+    font-family: xmas;
+    font-size: 3.5vh;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    /*margin: 1vh;*/
+}
+
+#desplegable_usuario > button:hover{
+    background-color: #222e2a;
+}
+
+/*AJUSTES DE LA PÁGINA DE INICIO --------------------------------------------------------------------*/
+/*Pagina de inicio*/
+#inicio {
+    background-image: url("../images/fondo.png");
+    background-size: cover;
+}
+
+#inicio h1{
+    text-align: center;
+    vertical-align: central;
+    padding-top: 40vh;
+    color: #F9F1ED;
+    font-size: 2.5vw;
+}
+
+.contenedor-contador{
+    background-color: rgba(73, 74, 110, 0.69);
+    width: 100vw;
+    align-content: center;
+}
+
+.contador{
+    padding-left: 35%;
+    padding-right: 35%;
+    display: flex;
+}
+
+.modulo-contador {
+    color: #F9F1ED;
+    overflow-clip-margin: 20vh;
+    display: block;
+    text-align: center;
+    margin: 0.5%;
+    padding: 5%;
+    height: fit-content;
+}
+
+#inicio h2{
+    font-family: "DejaVu Sans", serif;
+    font-size: 3vw;
+    font-weight: normal;
+}
+
+/*COSITAS PARA EL POP-UP DE LA CESTA*/
+.pop-modal-cesta{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    width: 30%;
+    height: auto;
+    max-height: 100vh;
+    /*overflow: hidden;*/
+    background-color: whitesmoke;
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor-contenido-modal-cesta {
+    background-color: seagreen;
+    margin: 5% auto;
+    border: 1px dashed #888;
+    width: 90%;
+    position: relative;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*align-items: center;*/
+}
+
+.contenedor-productos {
+    min-height: 60%;
+    height: fit-content;
+    display:grid;
+    grid-template-rows: repeat(6, 1fr);
+    /*overflow-y: scroll;*/
+    /*grid-row-gap: 0.5vh;*/
+    overflow-y: scroll;
+}
+/*
+#producto-peluche-papa {
+    grid-row: 1;
+}
+
+#producto-calendario {
+    grid-row: 2;
+}
+
+#producto-peluche-rodolfo {
+    grid-row: 3;
+}
+
+#producto-libro {
+    grid-row: 4;
+}
+
+#producto-viaje {
+    grid-row: 5;
+}
+
+#producto-elfo {
+    grid-row: 6;
+}
+*/
+
+.caja-prodcutos {
+    display:grid;
+    grid-template-columns: 10% 30% 30% 10% 20%;
+    grid-template-rows: 30% 35% 35%;
+    padding: 0.5vh 1vh 0.5vh 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.no-producto {
+    grid-column: 1;
+    grid-row: 1/4;
+    justify-self: center;
+    justify-content: center;
+}
+
+.no-producto:hover {
+    color: black;
+}
+
+.titulo-producto{
+    grid-column: 2/-1;
+    grid-row: 1;
+}
+
+.img-producto {
+    height: 7vh;
+    width: auto;
+    object-fit: cover;
+    grid-column: 2/4;
+    grid-row: 2/4;
+    justify-items: center;
+}
+
+.precio-producto{
+    grid-column: 3/-1;
+    grid-row: 2;
+}
+
+.cant-producto{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.quantity-producto{
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.sumar-producto{
+    grid-column: 5;
+    grid-row: 3;
+}
+
+.dinero-total {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+
+.pop-modal-cesta h2{
+    font-family: xmas;
+    margin: 2vh auto 0 auto;
+    color: whitesmoke;
+    font-size: 4vh;
+}
+
+#total-t, #span-total{
+    font-family: xmas;
+    color: whitesmoke;
+    font-size: 4vh;
+    justify-content: right;
+    text-align: right;
+}
+
+#span-total {
+    margin-right: 2vh ;
+}
+
+#arriba-cesta{
+    margin: 1vh auto;
+    width: 90%;
+    color: whitesmoke;
+}
+#abajo-cesta{
+    margin: 1vh auto;
+    width: 90%;
+    color: whitesmoke;
+}
+
+#pagar-boton {
+    width: 95%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin: 1vh;
+    border-radius: 10px;
+    border-color: whitesmoke;
+    font-family: xmas;
+    font-size: 2.5vh;
+}
+
+.caja-prodcutos {
+    color: white;
+    border-bottom: 1px dashed whitesmoke;
+
+}
+
+.sumar-producto {
+    border-radius: 0;
+    border: maroon solid 1px;
+    background-color: #B03060;
+    color: whitesmoke;
+}
+
+.sumar-producto:hover {
+    border: maroon solid 1px;
+    background-color: whitesmoke;
+    color: #B03060;
+}
+
+
+
+/*AJUSTES POP-UP PARA EL PAGO DE LA CESTA*/
+
+.pop-modal-pago {
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    background-color: whitesmoke;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-contenido-modal-pago {
+    background-color: whitesmoke;
+    margin: 0 auto 5% auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    padding-top: 2vh;
+}
+
+.contenedor-contenido-modal-pago h3{
+    color:#1b1b28
+}
+
+.cotenedor-formulario-pago {
+    width: 90%;
+    height: 100%;
+    margin: 2vh auto;
+
+}
+
+.cotenedor-formulario-pago label{
+    padding-left: 2vh;
+    width: 100%;
+    margin: 1vh 0;
+    color:#1b1b28
+}
+.cotenedor-formulario-pago input{
+    width: 97%;
+    color:white;
+    padding: 1.5vh;
+    padding-right: 0;
+    margin-bottom: 2vh;
+    border-radius: 5vh;
+}
+
+.cotenedor-formulario-pago select{
+    width: 100%;
+    padding: 1.5vh;
+    padding-right: 0;
+    margin-bottom: 2vh;
+    border-radius: 5vh;
+    background-color: white;
+}
+
+.cotenedor-formulario-pago option{
+    width: 100%;
+}
+
+.cotenedor-formulario-pago button{
+    padding: 1.5vh;
+    width: 50%;
+    justify-content: center;
+    border-radius: 0;
+    background-color: darkgreen;
+    color: white;
+}
+
+#cerrar-pago {
+    margin-left: 1vh;
+    font-size: 5vh;
+}
+
+/*AJUSTES DE LA PÁGINA CONOCE A PAPA NOEL -----------------------------------------------------------*/
+/*Pagina conoce*/
+#conoce {
+    background-image: url("../images/fondo.png");
+    background-size: cover;
+}
+
+.contenedor-conoce{
+    margin:3vw;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:0;
+    background-color: #F9F1ED;
+    height: 90vh;
+    width: 93vw;
+    overflow: scroll;
+}
+
+.contenedor-conoce-texto{
+    padding: 5vh;
+    color: #494A6E;
+}
+
+.texto-conoce{
+    padding: 3vh;
+    font-family: "DejaVu Sans", serif;
+    font-weight: lighter;
+}
+
+.contenedor-conoce-foto{
+    background-image: url("../images/santacute.png");
+    background-size: cover;
+}
+
+
+/*AJUSTES DE LA PÁGINA MAPA ------------------------------------------------------------------------*/
+/*Pagina mapa interactivo*/
+#mapa{
+    background-size: cover;
+    background-color: #F9F1ED;
+    overflow: hidden;
+}
+
+#mapa h1{
+    color: #494A6E;
+    text-align: center;
+    float:right;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    padding-right: 2vw;
+ }
+
+
+.contenedor-mapa{
+    background-color: #f9F1ED;
+    width: 100vw;
+    height: fit-content;
+    margin-top: 15vh;
+}
+
+.fondo-guachi-mapa{
+    background-image: url("../images/arbol.jpg");
+    background-size: cover;
+    opacity: 90%;
+    width: fit-content;  
+    padding-left: 8vw;
+    padding-right: 8vw;
+    padding-bottom: 15vh;
+    padding-top: 10vh;
+    align-items: center;
+}
+
+#objeto-mapa{
+    border: 3vw solid #fffcfa;
+    align-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+}
+
+
+
+/*AJUSTES DE LAS CARTAS ----------------------------------------------------------------------------*/
+/*Pagina cartas*/
+#cartas{
+    background-color: #F9F1ED;
+}
+
+#cartas h1{
+    color: #494A6E;
+    text-align: center;
+    margin-top: 2vw;
+}
+
+.contenedor-cartas{
+    background-image: url("../images/fondo.png");
+    opacity: 90%;
+    background-size: cover;
+    margin-left:3vw;
+    margin-right:3vw;
+    margin-bottom:3vh;
+    margin-top:2vh;
+
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap:0.5vw;
+
+    min-height: 80vh;
+    height: fit-content;
+    width: 93vw;
+}
+
+.contenedor-cartas-caja{
+    margin:2vh 2vw;
+    background-color: rgba(165, 166, 217, 0.68);
+    border-radius: 3vh;
+    height: 90%;
+}
+
+.contenedor-cartas-caja-imagen{
+    float: right;
+    width: 10vw;
+    height: 10vw;
+    margin: 2vh;
+
+}
+
+.contenedor-cartas-caja-imagen img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 4vh;
+}
+
+.contenedor-cartas-caja-texto{
+    font-family: "DejaVu Sans", serif;
+    font-size: 1.1vw;
+}
+
+.contenedor-cartas-caja-texto p{
+    padding: 5%;
+    color:#1b1b28
+}
+
+.contenedor-cartas-caja-texto h3{
+    padding-top: 8%;
+    padding-left: 8%;
+    color: #1b1b28;
+
+}
+
+
+/*AJUSTES DEL BUZÓN ----------------------------------------------------------------------------*/
+/*Pagina buzón de cartas*/
+#buzon{
+    background-size: cover;
+    background-color: #F9F1ED;
+
+}
+
+#buzon h1{
+    color: #494A6E;
+    text-align: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+ }
+
+.contenedor-buzon{
+    background-image: url("../images/arbol.jpg");
+    opacity: 90%;
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    position: absolute;
+}
+
+.formulario-buzon{
+    background-color: #F9F1ED;
+    vertical-align: central;
+    margin: 7vh;
+    padding: 3%;
+    height:90%;
+}
+
+.input-formulario-buzon{
+    width: 95%;
+    margin:2%;
+    height: 3vh;
+    border-radius: 1vh;
+}
+
+#buzon label{
+    width:95%;
+    text-align: center;
+    color:#1b1b28
+}
+
+.boton-formulario-buzon{
+    margin:2%;
+    background-color: #60867a;
+    color: #F9F1ED;
+    width: 95%;
+    border-color: rgba(252, 234, 241, 0);
+    height: 7vh;
+    border-radius: 2vh;
+}
+
+
+
+/*AJUSTES DEL CALENDARIO --------------------------------------------------------------------------*/
+/*Pagina del calendario de adviento*/
+#calendario{
+    background-color: #F9F1ED;
+    margin-top: 15vh;
+    min-height: 120vh;
+    padding-bottom: 5vh;
+}
+
+#calendario h1{
+    color: #494A6E;
+    text-align: center;
+    /*float: right;*/
+    margin: 2vw;
+    width: 100%;
+}
+
+/*
+#calendario p {
+    color: darkred;
+    text-align: center;
+    font-size: 3vw;
+    margin-bottom: 2vh;
+}*/
+
+.contenedor-calendario{
+    background-color: #E3D4C9;
+    /*margin: 10vh;*/
+    display:grid;
+    width: 90vw;
+    height: 75%;
+    grid-template-columns: 70% 30%;
+    border-radius: 2vh;
+    margin: auto 10vh 5vh 10vh;
+}
+
+.calendario{
+    margin:3vh;
+    border-radius: 6vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1vh;
+}
+.contenedor-cajas-calendario{
+    border: 2px solid rgb(218, 165, 32);
+    border-radius: 2vh 2vh;
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contenedor-cajas-calendario button:hover{
+    background-color: rgba(254, 254, 254, 0.68);
+    border-radius: 1vh 1vh;
+}
+
+.separador-bonito {
+    font-family: 'Barra';
+    font-size: 5vw;
+    text-align: center;;
+}
+
+.separador-bonito-receta {
+    font-family: 'Barra';
+    font-size: 3vw;
+    text-align: center;;
+}
+
+
+.texto-regalo-calendario h2{
+    font-size: 5vw;
+    margin-top: 3vh;
+    font-family: 'Christmas';
+    text-align: center;;
+}
+
+.texto-regalo-calendario h3{
+    font-size: 3vw;
+    margin-top: 1vh;
+    font-family: 'Christmas';
+    text-align: center;
+    color: maroon;
+}
+
+.texto-regalo-calendario h4{
+    font-size: 2.2vw;
+    margin-top: 1vh;
+    font-family: 'Christmas';
+    font-weight: lighter;
+    text-align: center;
+
+}
+
+.contenedor-cajas-calendario button{
+    font-family: 'Christmas';
+    font-size: 8vh;
+    text-align: center;
+    text-shadow: 0.1vh 0.1vh 0.2vh rgba(0, 0, 0, 0.5);
+    color: goldenrod;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+
+}
+
+#dia1, #dia2, #dia3, #dia4, #dia5, #dia6 {
+    background-image: url("../images/papelRegalo5.jpeg");
+    background-size: cover;
+}
+
+#dia7, #dia8, #dia10, #dia11, #dia16 {
+    background-image: url("../images/papelRegalo6.jpeg");
+    background-size: cover;
+}
+
+#dia13, #dia19, #dia15, #dia12, #dia17 {
+    background-image: url("../images/papelRegalo7.jpeg");
+    background-size: cover;
+}
+
+#dia14, #dia20, #dia21, #dia22, #dia23, #dia24 {
+    background-image: url("../images/papelRegalo2.jpeg");
+    background-size: cover;
+}
+
+#dia25, #dia9, #dia18{
+    background-image: url("../images/papelRegalo4.jpeg");
+    background-size: cover;
+}
+
+#dia1{
+    grid-row: 9;
+    grid-column: 3/6;
+
+}
+
+#dia3{
+    grid-row: 6/8;
+    grid-column: 2/4;
+}
+
+#dia5{
+    grid-row: 8/10;
+    grid-column: 6;
+}
+
+#dia7{
+    grid-row: 8/10;
+    grid-column: 2;
+}
+
+#dia10{
+    grid-row: 5/9;
+    grid-column: 4;
+}
+
+#dia13{
+    grid-row: 3/6;
+    grid-column: 3;
+}
+
+#dia15{
+    grid-row: 1/3;
+    grid-column: 6;
+}
+
+#dia18{
+    grid-row: 2/4;
+    grid-column: 1/3;
+}
+
+#dia20{
+    grid-row: 4/7;
+    grid-column: 1;
+}
+
+#dia22{
+    grid-row: 3;
+    grid-column: 4/7;
+}
+
+#dia24{
+    grid-row: 1;
+    grid-column: 2/5;
+}
+
+#dia25{
+    grid-column: 5/7;
+    grid-row: 4/8;
+}
+
+.foto-calendario{
+    background-image: url("../images/peluche.png");
+    background-size: cover;
+    margin: 3vh;
+    margin-left: 1vh;
+    border-radius: 6vh;
+    background-position: center;
+}
+
+.texto-regalo-calendario {
+    /*text-align: center;*/
+    width: 100%;
+    align-items: center;
+}
+
+.imagen-regalo {
+    width: 100%;
+    position: relative;
+    height: 15vh;
+    overflow: hidden;
+}
+
+
+
+/*FONT UTILIZADA PARA EL CALENDARIO DE ADVIENTO*/
+@font-face {
+    font-family: 'Christmas';
+    src: url("../images/Home_Christmas_1_.woff") format('woff');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Barra';
+    src: url("../images/barraFont.woff");
+    font-style: normal;
+    font-weight: bold;
+}
+
+/*POP UP PARA QUE APAREZCA LO GANADO EN EL CALENDARIO*/
+.pop-modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(250, 250, 250, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-contenido-modal {
+    background-color: whitesmoke;
+    margin: 5% auto 5% auto;
+    border: 1px solid #888;
+    width: 70%;
+    position: relative;
+    min-height: 80vh;
+    height: fit-content;
+    align-items: center;
+}
+
+.cerrar-pop{
+    float: right;
+}
+
+.cerrar-regalo{
+    margin: auto 2vh auto 1vh;
+    font-size: 5vh;
+    float: right;
+}
+
+.video-responsive{
+    /*min-height: 30vh;
+    height: fit-content;*/
+    justify-content: center;
+    display: flex
+}
+/*
+.video-responsive iframe{
+    width: auto;
+    height: 60%;
+}*/
+
+.contenedor-recetas{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: repeat(2, 1fr);
+    /*gap: 1vh;*/
+    width: 100%;
+    height:100%;
+}
+.pasos-receta{
+    grid-column: 2;
+    grid-row: 1/3;
+    justify-content: right;
+    margin: 1vh 2vh 2vh 1vh;
+    background-color: #f3e2cc;
+    border-radius: 3vh 3vh;
+    padding: 3vh;
+}
+
+.pasos-receta ol{
+    margin-left: 3.5vh;
+}
+
+
+.info-receta{
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: right;
+    margin: 1vh 1vh 2vh 2vh;
+    padding: 1vh;
+    background-color: #f3e2cc;
+    border-radius: 3vh 3vh;
+}
+
+.info-receta h3{
+    margin: 0.5vh 1vh 0.5vh 1vh;
+}
+
+.info-receta ul{
+    margin-left: 3.5vh;
+}
+
+.pasos-receta li {
+    font-size: 2.5vh;
+    margin-top: 0.5vh;
+}
+
+.pasos-receta a{
+    text-decoration: none;
+    color: dimgrey;
+    margin-top: 2vh;
+    float: right;
+}
+
+.pasos-receta a::after{
+    text-decoration: none;
+    color: slategrey;
+
+}
+
+.foto-receta{
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 25vh;
+    margin: 1vh 1vh 1vh 2vh;
+    background-color: #E3D4C9;
+    padding: 1vh;
+    border-radius: 5vh 5vh;
+    /*background-color: #30423d;*/
+}
+
+#arbol-receta{
+    background-image: url("../images/arbol-receta.jpg");
+    background-size: cover;
+}
+
+#corona-manualidad{
+    background-image: url("../images/hohoho.jpg");
+    background-size: cover;
+}
+
+#roscon-receta{
+    background-image: url("../images/roscon.jpg");
+    background-size: cover;
+}
+
+#churros-receta{
+    background-image: url("../images/como-hacer-churros-receta.jpg");
+    background-size: cover;
+}
+
+#galletitas-receta{
+    background-image: url("../images/hornear-galletas-de-mantequilla-navidad.jpg");
+    background-size: cover;
+}
+
+#gnomos-receta{
+    background-image: url("../images/gnomo.jpg");
+    background-size: cover;
+}
+.dibujo-regalo{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.dibujo-regalo img{
+    width: 40%;
+    height: auto;
+
+}
+
+.dibujo-regalo a {
+    font-family: 'Christmas';
+    text-decoration: none;
+    color: maroon;
+    margin: 1vh;
+    margin-bottom: 2vh;
+    font-size: 7vh ;
+}
+
+.dibujo-regalo a:hover {
+    color: darkslategray;
+}
+
+.calendario-contenido{
+    justify-content: center;
+    left: 30vw;
+}
+
+.no-regalo-texto {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 15% 0 15%;
+}
+
+.error1210{
+    color: blue;
+}
+
+#luces-día {
+    background-image: url("../images/luces.jpg");
+    background-size: contain;
+    min-height: 50vh;
+    height: fit-content;
+    max-height: 100%;
+    margin: auto 5% auto 5%;
+    border-radius: 3vh 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#calamares-dia {
+    background-image: url("../images/calamares.jpg");
+    background-size: contain;
+    min-height: 50vh;
+    height: fit-content;
+    max-height: 100%;
+    margin: auto 5% auto 5%;
+    border-radius: 3vh 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.recordatorio-texto  hr, .recordatorio-texto  h3, .recordatorio-texto   h4 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+hr{
+    margin: 2vh;
+}
+
+
+.danger {
+    display: inline-block;
+    padding: 3vh 6vh;
+    font-size: 2vh;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: firebrick;
+    border: none;
+    border-radius: 1vh 1vh;
+    box-shadow: 0 9px #999;
+    margin: 1vh auto;
+}
+
+.danger:hover {
+    background-color: darkred;
+}
+
+.danger:active {
+    background-color: darkred;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.regalo-final {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    display: none;
+}
+
+/*ALERTA PARA CUANDO NO SON DIAS DE DICIEMBRE*/
+#cerrar-alerta {
+    font-size: 3vh;
+    margin: auto 2vh auto 1vh;
+    font-weight: bold;
+}
+
+.alerta p{
+    width: 70%;
+    color: white;
+    margin-bottom: 0;
+
+}
+.alerta {
+    display: none;
+    padding: 3vh;
+    background-color: #f44336; /* Red */
+    color: white;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 3vh;
+}
+#cerrar-alerta:hover{
+    color: #1b1b28;
+}
+
+#peligro-final {
+    margin-top: 20% ;
+}
+
+.regalo-final{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.regalo-final h2 {
+    color: maroon;
+}
+
+/*AJUSTES DE LOS JUEGOS --------------------------------------------------------------------------*/
+/*Pagina de juega*/
+#juega{
+    background-color: #F9F1ED;
+}
+
+#juega h1{
+    color: #494A6E;
+    margin:2vw;
+    float: right;
+}
+
+.contenedor-juega{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100vw;
+}
+
+.juegos-fotos{
+    width: 75vw;
+    height: 100%;
+}
+
+.juegos{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    width: 70vw;
+    height: 75vh;
+}
+
+.juegos img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-color: #494A6E;
+    border-style: solid;
+}
+
+.target-juego{
+    width: 15vw;
+    height: 15vh;
+    object-fit: contain;
+    position: absolute;
+    cursor: pointer;
+    transition: left 0.5s ease, top 0.5s ease;
+}
+
+#target-juego-1{
+    transition: left 0.5s ease, top 0.5s ease;
+    /*animacion para que parezca que flota*/
+    animation: flotar 1s ease-in-out infinite; /* Añadir la animación */
+}
+
+/*animacion para que parezca que circulito flota*/
+@keyframes flotar {
+    0% {
+        transform: translateY(0); /* Posición original */}
+    50% {
+        transform: translateY(-10px); /* Sube 10px */}
+    100% {
+        transform: translateY(0); /* Regresa a la posición original */}
+}
+
+.barra-juego2{
+    width: 8%;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    position: relative;
+}
+
+#target-juego-2{
+    width: 3%;
+    position: relative;
+}
+
+.score{
+    background-color: #7fab9a;
+    color: #F9F1ED;
+    margin: 20%;
+    margin-top: 10%;
+    width: 15vw;
+    height: 21%;
+    border-radius: 5% 15%;
+}
+
+.contenedor-score-titulo{
+    font-family: "DejaVu Sans", serif;
+    font-size: 1vw;
+    font-weight: normal;
+
+    float: left;
+    display: block;
+
+    padding-left: 7%;
+    padding-right: 5%;
+    padding-top: 4%;
+    padding-bottom: 1.5%;
+}
+
+.contenedor-score-texto{
+    font-family: "DejaVu Sans", serif;
+    font-size: 1vw;
+    font-weight: normal;
+
+    float: right;
+    display: block;
+
+    padding-left: 4%;
+    padding-right: 7%;
+    padding-top: 5%;
+    padding-bottom: 1.5%;
+}
+
+
+
+.contenedor-botones-juega{
+    width: 25vw;
+    grid-template-columns: repeat(1, 2fr);
+}
+
+.contenedor-botones-reinicio{
+}
+
+.botones-juega{
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    vertical-align: central;
+    padding: 3%;
+    align-content: center;
+    width: 15vw;
+    height: 15vh;
+
+    background-color: #494A6E;
+    color: #F9F1ED;
+    border-color: rgba(249, 241, 237, 0);
+    border-radius: 2vh;
+}
+
+.botones-juega:hover{
+    background-color: #2f2f65;
+    box-shadow: 2px 2px 4px rgba(165, 166, 217, 0.83);
+}
+
+.botones-juega-reinicio{
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    vertical-align: central;
+    padding: 2%;
+    align-content: center;
+    width: 15vw;
+    height: 8vh;
+
+    background-color: #8686a9;
+    color: #F9F1ED;
+    border-color: rgba(249, 241, 237, 0);
+    border-radius: 2vh;
+}
+
+.botones-juega-reinicio:hover{
+    background-color: rgba(90, 91, 173, 0.68);
+    box-shadow: 2px 2px 4px rgba(165, 166, 217, 0.83);
+}
+
+
+/*AJUSTES DE LAS EXPERIENCIAS ------------------------------------------------------------------------*/
+/*Pagina de compra experiencias*/
+#experiencias{
+    background-image: url("../images/fondo.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#experiencias h1{
+    margin: 2vw;
+    text-align: center;
+    color: #F9F1ED;
+}
+
+.contenedor-experiencias{
+    background-color: #F9F1ED;
+    /*margin-bottom: 10vh;*/
+    padding: 3%;
+    min-height: 90%;
+    height: fit-content;
+    width: 94%;
+    position: page;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 50% 50%;
+    grid-row-gap: 1%;
+    grid-column-gap: 2vh;
+    /*padding: 2%;*/
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+
+.contenedor-experiencias-caja{
+    background-color: white;
+    height: 90%;
+    width: 90%;
+    border-radius: 1vh;
+    border: 1px solid rgba(73, 74, 110, 0.64);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2%;
+    margin: auto 2% auto 2%;
+
+}
+
+.contenedor-experiencias-caja-imagen{
+
+    /*width: fit-content;*/
+    height: 67%;
+    width: auto;
+    /*padding: 1vh 1vh 0 1vh;*/
+}
+
+.contenedor-experiencias-caja-imagen img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5vh;
+    object-fit: cover;
+}
+#experiencia1{
+    /*margin-left:2vw;*/
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#experiencia2{
+    grid-row: 1;
+    grid-column: 2;
+}
+
+#experiencia3{
+    grid-row: 1;
+    grid-column: 3;
+}
+
+#experiencia4{
+    grid-row: 1;
+    grid-column: 4;
+}
+
+#experiencia5{
+    /*width: 40vw;
+    object-fit: cover;*/
+    grid-row: 2;
+    grid-column: 1/3;
+}
+
+#experiencia5 img{
+    /*width: 43vw;*/
+}
+
+#experiencia6{
+    /*width: 40vw;
+    /*margin-left: 25vw;
+    object-fit: cover;*/
+    grid-row: 2;
+    grid-column: 3/-1;
+
+}
+
+#experiencia6 img{
+    /*width: 43vw;*/
+}
+
+.contenedor-experiencias-caja-texto{
+    padding: 2%;
+    padding-top: 3%;
+    width: 96%;
+    height: 29%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+.contenedor-experiencias-caja-texto p{
+    font-size: 3vh;
+    font-family: 'Christmas';
+    color:#1b1b28
+
+}
+
+.contenedor-experiencias-caja-texto h3{
+    font-size: 4vh;
+    font-family: 'Christmas';
+    color:#1b1b28
+}
+
+.añadir-producto{
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    justify-content: space-around;
+    background-color: maroon;
+    color: whitesmoke;
+    border: none;
+    font-size: 4vh;
+    font-family: 'Christmas';
+}
+
+.añadir-producto:hover {
+    background-color: ghostwhite;
+    color: maroon;
+    border: maroon 1px solid;
+}
+
+#pago-pop-up h3{
+    justify-content: center;
+    font-size: 3vh;
+    margin: 0 auto;
+}
+
+
+/*POP UP PARA EL HISTORIAL DE COMPRAS -----------------------------------------------------*/
+
+/* Fondo oscuro para el popup */
+.pop-modal-historial {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    overflow-y: scroll;
+}
+
+/* cubito */
+.contenedor-contenido-modal-hist{
+    background-color: rgba(65, 98, 82, 0.9);
+    padding: 3vh;
+    padding-top: 1vh;
+    border-radius: 2vh;
+    width: 100vh;
+    height: 80vh;
+    top:2vh;
+
+}
+
+.contenedor-contenido-modal-hist h3{
+    width: 100%;
+    height: fit-content;
+    font-size: 5vh;
+    font-family: Christmas;
+    color: white;
+}
+
+.caja-pedidos-historial{
+    overflow-y: scroll;
+    grid-template-rows: repeat(1, 1fr);
+    row-gap: 4vh;
+    height: 70vh;
+
+}
+
+.pedido-historial{
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    height: fit-content;
+    row-gap: 0.5vh;
+    padding: 1vh 0;
+    background-color:  rgba(255, 255, 255, 0.5);
+    margin-bottom: 2vh;
+}
+
+.caja-productos-historial {
+    display: grid;
+    grid-template-columns: 20% 50% 10% 20%;
+    height: fit-content;
+}
+
+.fecha-pedido {
+    height: fit-content;
+    font-size: 3vh;
+    font-family: Christmas;
+    color: black;
+    padding-left: 5%;
+    text-align: left;
+}
+
+.titulo-producto-hist{
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    align-content: center;
+}
+.img-producto-hist {
+    height: 8vh;
+    width: auto;
+    object-fit: cover;
+    grid-column: 1;
+    grid-row: 1;
+    float: right;
+    margin: 0 auto;
+    justify-items: center;
+    border-style: solid;
+    border-color: white;
+    border-width: 0.1vh;
+}
+.cant-producto-hist{
+    grid-column: 4;
+    grid-row: 1;
+    text-align: left;
+    align-content: center;
+    padding: 1vh;
+}
+.texto-producto-hist{
+    grid-column: 3;
+    grid-row: 1;
+    text-align: right;
+    align-content: center;
+    padding: 1vh;
+}
+
+#cerrar-historial{
+    text-align: right;
+    font-size: 3vh;
+    color: white;
+}
+
+#cerrar-historial:hover{
+    color: #8686a9;
+}
+
+/*AJUSTES DEL FOOTER -------------------------------------------------------------------------------*/
+/*Pagina del footer*/
+.footer{
+    width: 100vw;
+    height: 5vh;
+
+}
+
+.contenedor-footer{
+    gap: 5vw;
+}
+
+#contenedor-footer-1{
+    background-color: #31324b;
+    color: #F9F1ED;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3vw 5vw;
+}
+
+.columnaFooter{
+    align-items: center;
+    justify-content: center;
+}
+
+#columnaFooter-1{
+    width: 20%;
+}
+
+#columnaFooter-2{
+    width: 55vw;
+    font-style: oblique;
+}
+#columnaFooter-2 h3{
+    margin-bottom: 1vh;
+}
+
+#columnaFooter-3{
+    width: 25vw;
+    font-style: oblique;
+}
+
+.logos-footer img{
+    height: 3vw;
+    object-fit: contain;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    vertical-align: central;
+    padding: 1vw;
+    margin: 1vh auto;
+}
+
+#twitter{
+    filter: invert();
+}
+
+
+.redes-sociales{
+    list-style-type: none;
+    object-fit: contain;
+    display: inline-flex;
+}
+
+
+
+.logoFooter {
+    width: 5vw;
+    filter: invert();
+}
+
+#contenedor-footer-2{
+    background-color: #252536;
+    border-color: #3e3f60;
+    border-style: solid;
+    border-width: 1px 0;
+    color: #F9F1ED;
+    padding: 2vh 5vw 1vh 5vw;
+}
+
+.informacion-web{
+    display: inline-flex;
+    padding:0;
+    margin:0;
+    list-style-type: none;
+    overflow-clip-margin: 20vh;
+    top:0;
+    width:100%;
+    z-index: 1;
+}
+
+.informacion-web li{
+    gap: 5vw;
+    margin: 0 5.2vw;
+    flex-wrap: wrap;
+    font-size: 2vh;
+}
+
+.informacion-web-contenedor-2{
+    width: 100%;
+    margin: 2vh 0;
+    align-content: space-evenly;
+    align-items: center;
+
+}
+.informacion-web-contenedor-2 p{
+    text-align: center;
+    font-size: 2vh;
+    padding-top: 1vh;
+}

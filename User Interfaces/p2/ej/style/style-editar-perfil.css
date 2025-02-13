@@ -1,0 +1,55 @@
+/*importamos la fuente personalizada*/
+/*vamos a importar una fuente "navideña" para home*/
+@font-face {
+    font-family: "xmas";
+    src: url("../xmas.ttf");
+  }
+
+/* Fondo oscuro para el popup */
+#popup_mi_perfil {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* cubito */
+.popup_mi_perfil_contenido {
+    background-color: rgb(255, 214, 214);
+    padding: 3vh;
+    border-radius: 2vh;
+    width: 100vh;
+    text-align: center;
+}
+
+.popup_mi_perfil p{
+    color: rgb(70, 21, 21);
+    font-family: xmas;
+    font-size: 5vh;
+}
+
+.popup_mi_perfil h1{
+    color: rgb(70, 21, 21);
+    font-family: xmas;
+    font-size: 10vh;
+    font-weight: normal;
+}
+
+.popup_mi_perfil button{
+    background-color: rgb(70, 21, 21);
+    border-radius: 2vh;
+    color: rgb(255, 214, 214);
+    font-family: xmas;
+    font-size: 4vh;
+    padding: 1vh;
+}
+
+.popup_mi_perfil button:hover{
+    background-color: rgb(104, 54, 54);
+}
